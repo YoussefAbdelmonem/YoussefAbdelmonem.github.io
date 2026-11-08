@@ -1,142 +1,621 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Youssef Abdelmonem · Flutter Developer</title>
-  <meta name="description" content="Flutter developer portfolio — app showcase videos by Youssef Abdelmonem. Open to roles in Germany." />
-  <meta property="og:title" content="Youssef Abdelmonem · Flutter Developer" />
-  <meta property="og:description" content="App showcase videos — Flutter, BLoC, Firebase, AI integrations." />
+  <title>Youssef Ramadan · Senior Flutter Engineer</title>
+  <meta name="description" content="Youssef Ramadan – Senior Flutter Engineer in Dortmund. 4+ Jahre Erfahrung, 15+ veröffentlichte Apps, Clean Architecture, BLoC, Fintech. Sofort verfügbar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Youssef Ramadan · Senior Flutter Engineer" />
+  <meta property="og:description" content="4+ Jahre Flutter, 15+ Apps in App Store, Google Play & AppGallery. Dortmund · Deutsch B2 · sofort verfügbar." />
   <meta property="og:image" content="posters/outfit-ai-en.jpg" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%236C4CE0'/><text x='32' y='43' font-family='Arial' font-weight='700' font-size='30' fill='white' text-anchor='middle'>YA</text></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#6C4CE0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%236C4CE0'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle'>YR</text></svg>" />
+  <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
   <style>
+    /* Fonts are self-hosted on purpose: no requests to Google (GDPR / DSGVO). */
+    @font-face { font-family: "Inter"; src: url("fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+    @font-face { font-family: "Space Grotesk"; src: url("fonts/space-grotesk.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+
     :root {
-      --ink: #14111F; --bg: #FFFFFF; --mist: #F1ECFB; --violet: #6C4CE0; --coral: #FF7A59;
-      --text: #14111F; --muted: #6E6880; --card: #FFFFFF; --line: #E6E0F3;
+      --bg: #FAFAFC; --surface: #FFFFFF; --surface-2: #F3F0FA; --text: #15121F; --muted: #625C73;
+      --line: #E5E0EF; --accent: #6C4CE0; --accent-ink: #FFFFFF; --accent-soft: #EDE8FC; --ok: #138A52; --ok-soft: #E3F5EC;
+      --shadow: 0 1px 2px rgba(21,18,31,.04), 0 8px 24px rgba(21,18,31,.06);
     }
     @media (prefers-color-scheme: dark) {
-      :root { --bg: #14111F; --mist: #1D1930; --text: #F4F1FB; --muted: #A9A2BF; --card: #1D1930; --line: #2D2843; --violet: #9B82FF; }
+      :root:not([data-theme="light"]) {
+        --bg: #100E18; --surface: #181523; --surface-2: #211D30; --text: #F2EFF9; --muted: #A7A0BC;
+        --line: #2C2740; --accent: #9C85FF; --accent-ink: #120F1C; --accent-soft: #2A2445; --ok: #4ED39A; --ok-soft: #173327;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+      }
     }
+    :root[data-theme="dark"] {
+      --bg: #100E18; --surface: #181523; --surface-2: #211D30; --text: #F2EFF9; --muted: #A7A0BC;
+      --line: #2C2740; --accent: #9C85FF; --accent-ink: #120F1C; --accent-soft: #2A2445; --ok: #4ED39A; --ok-soft: #173327;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+    }
+
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
     html, body { margin: 0; background: var(--bg); color: var(--text); }
-    body { font-family: Inter, system-ui, sans-serif; line-height: 1.55; }
-    a { color: var(--violet); }
+    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); }
+    img, video { max-width: 100%; }
     .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-    header { padding: 72px 0 40px; }
-    .kicker { display: flex; align-items: center; gap: 12px; font: 600 13px/1 "Space Grotesk", sans-serif;
-      letter-spacing: .14em; text-transform: uppercase; color: var(--violet); }
-    .kicker::before { content: ""; width: 36px; height: 3px; background: var(--violet); border-radius: 2px; }
-    h1 { font: 700 clamp(40px, 7vw, 76px)/1.02 "Space Grotesk", sans-serif; letter-spacing: -.03em; margin: 18px 0 10px; }
-    .role { font: 600 22px/1.3 "Space Grotesk", sans-serif; color: var(--violet); margin: 0 0 14px; }
-    .lede { color: var(--muted); max-width: 620px; font-size: 18px; margin: 0 0 24px; }
-    .links { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 999px;
-      font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid var(--line); color: var(--text); }
-    .btn.primary { background: var(--violet); border-color: var(--violet); color: #fff; }
-    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--mist); color: var(--muted);
-      font-size: 13px; font-weight: 500; }
-    section { padding: 24px 0 72px; }
-    h2 { font: 700 30px/1.2 "Space Grotesk", sans-serif; letter-spacing: -.02em; margin: 0 0 24px; }
-    .project { background: var(--card); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; margin-bottom: 36px; }
-    .player { position: relative; background: #000; }
-    .player video { display: block; width: 100%; height: auto; max-height: 78vh; margin: 0 auto; }
-    .body { padding: 22px 24px 26px; }
-    .row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
-    h3 { font: 700 24px/1.2 "Space Grotesk", sans-serif; margin: 0; }
-    .tabs { display: inline-flex; background: var(--mist); border-radius: 999px; padding: 4px; gap: 2px; flex-wrap: wrap; }
-    .tabs button { border: 0; background: transparent; color: var(--muted); font: 600 13px Inter, sans-serif;
-      padding: 7px 12px; border-radius: 999px; cursor: pointer; }
-    .tabs button[aria-pressed="true"] { background: var(--violet); color: #fff; }
-    .desc { color: var(--muted); margin: 12px 0 14px; max-width: 760px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-    .chips li { font-size: 13px; font-weight: 500; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); }
-    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-    .skill { border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; background: var(--card); }
-    .skill h4 { font: 700 17px/1.2 "Space Grotesk", sans-serif; margin: 0 0 6px; color: var(--violet); }
-    .skill p { margin: 0; color: var(--muted); font-size: 15px; }
-    footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+    .display { font-family: "Space Grotesk", Inter, sans-serif; letter-spacing: -.02em; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+    .nav .wrap { display: flex; align-items: center; gap: 20px; height: 62px; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font: 700 17px/1 "Space Grotesk", sans-serif; color: var(--text); text-decoration: none; }
+    .logo i { width: 32px; height: 32px; border-radius: 9px; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-style: normal; font-size: 14px; }
+    .nav ul { display: flex; gap: 4px; list-style: none; margin: 0 0 0 auto; padding: 0; }
+    .nav ul a { display: block; padding: 8px 12px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 14.5px; font-weight: 500; }
+    .nav ul a:hover { color: var(--text); background: var(--surface-2); }
+    .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+    .lang button { border: 0; background: none; color: var(--muted); font: 600 12.5px Inter, sans-serif; padding: 5px 10px; border-radius: 999px; cursor: pointer; }
+    .lang button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+    @media (max-width: 760px) { .nav ul { display: none; } .lang { margin-left: auto; } }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 10px; font-weight: 600; font-size: 15px;
+      text-decoration: none; border: 1px solid var(--line); color: var(--text); background: var(--surface); transition: transform .15s, border-color .15s; }
+    .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    .btn svg { width: 17px; height: 17px; flex: none; }
+
+    /* Hero */
+    .hero { padding-block: 64px 40px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+    .status { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--ok-soft); color: var(--ok); font-size: 13.5px; font-weight: 600; }
+    .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 25%, transparent); }
+    h1 { font: 700 clamp(40px, 6.4vw, 68px)/1.02 "Space Grotesk", sans-serif; letter-spacing: -.035em; margin: 18px 0 8px; }
+    .role { font: 600 clamp(19px, 2.4vw, 24px)/1.3 "Space Grotesk", sans-serif; color: var(--accent); margin: 0 0 18px; }
+    .lede { color: var(--muted); max-width: 640px; font-size: 17.5px; margin: 0 0 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 26px; padding: 0; list-style: none; color: var(--muted); font-size: 14.5px; }
+    .meta li { display: inline-flex; align-items: center; gap: 6px; }
+    .meta svg { width: 16px; height: 16px; color: var(--accent); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .portrait { width: 260px; aspect-ratio: 1; border-radius: 28px; overflow: hidden; background: var(--surface-2); box-shadow: var(--shadow); border: 1px solid var(--line); }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 820px) { .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 40px; } .portrait { width: 132px; border-radius: 22px; order: -1; } }
+
+    /* Facts */
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 18px; background: var(--surface); overflow: hidden; margin-bottom: 24px; }
+    .fact { padding: 20px 22px; border-left: 1px solid var(--line); }
+    .fact:first-child { border-left: 0; }
+    .fact b { display: block; font: 700 30px/1.1 "Space Grotesk", sans-serif; letter-spacing: -.02em; }
+    .fact span { color: var(--muted); font-size: 14px; }
+    @media (max-width: 760px) { .facts { grid-template-columns: 1fr 1fr; } .fact:nth-child(3) { border-left: 0; } .fact:nth-child(n+3) { border-top: 1px solid var(--line); } }
+
+    /* Sections */
+    section { padding: 56px 0; }
+    .sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 28px; }
+    .eyebrow { font: 600 12.5px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+    h2 { font: 700 clamp(28px, 3.6vw, 38px)/1.15 "Space Grotesk", sans-serif; letter-spacing: -.025em; margin: 0; }
+    .sec-head p { color: var(--muted); margin: 0; max-width: 460px; }
+
+    /* Projects */
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .featured { display: grid; grid-template-columns: 1.55fr 1fr; margin-bottom: 24px; }
+    .featured .media { min-height: 100%; }
+    @media (max-width: 900px) { .featured { grid-template-columns: 1fr; } }
+    .media { position: relative; background: #0D0B14; display: grid; place-items: center; }
+    .media video { display: block; width: 100%; height: 100%; max-height: 78vh; object-fit: contain; }
+    .media.vertical video { max-height: 640px; width: auto; }
+    .placeholder { aspect-ratio: 16 / 10; width: 100%; display: grid; place-items: center; text-align: center; color: #CFC8E6;
+      background: radial-gradient(120% 90% at 20% 0%, color-mix(in srgb, var(--hue, #6C4CE0) 55%, #0D0B14) 0%, #0D0B14 70%); }
+    .placeholder .mono { width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; margin: 0 auto 12px;
+      font: 700 26px "Space Grotesk", sans-serif; color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); }
+    .placeholder small { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; letter-spacing: .04em; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,.08); }
+    .body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .kind { font-size: 13px; font-weight: 600; color: var(--accent); margin: 0; }
+    h3 { font: 700 22px/1.2 "Space Grotesk", sans-serif; letter-spacing: -.015em; margin: 0; }
+    .featured h3 { font-size: 28px; }
+    .desc { color: var(--muted); margin: 0; font-size: 15px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+    .chips li { font-size: 12.5px; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
+    .tabs { display: inline-flex; flex-wrap: wrap; gap: 4px; background: var(--surface-2); border-radius: 10px; padding: 4px; align-self: flex-start; }
+    .tabs button { border: 0; background: transparent; color: var(--muted); font: 600 12.5px Inter, sans-serif; padding: 6px 10px; border-radius: 7px; cursor: pointer; }
+    .tabs button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
+    .stores { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }
+    .stores a { font-size: 13px; font-weight: 600; text-decoration: none; padding: 6px 11px; border-radius: 8px; border: 1px solid var(--line); color: var(--text); }
+    .stores a:hover { border-color: var(--accent); color: var(--accent); }
+    .stores .tag { font-size: 13px; font-weight: 600; padding: 6px 11px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    @media (max-width: 400px) { .grid { grid-template-columns: 1fr; } }
+
+    /* Approach */
+    .approach { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .pillar { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+    .pillar .ico { width: 40px; height: 40px; border-radius: 11px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 14px; }
+    .pillar .ico svg { width: 20px; height: 20px; }
+    .pillar h4 { font: 700 18px/1.25 "Space Grotesk", sans-serif; margin: 0 0 6px; }
+    .pillar p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    /* Experience */
+    .timeline { display: grid; gap: 16px; }
+    .job { display: grid; grid-template-columns: 200px 1fr; gap: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    .job time { color: var(--muted); font-size: 14.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .job h4 { font: 700 20px/1.25 "Space Grotesk", sans-serif; margin: 0 0 2px; }
+    .job .co { color: var(--accent); font-weight: 600; margin: 0 0 12px; }
+    .job ul { margin: 0; padding-left: 18px; color: var(--muted); }
+    .job li { margin: 4px 0; }
+    .job li::marker { color: var(--accent); }
+    @media (max-width: 700px) { .job { grid-template-columns: 1fr; gap: 6px; } }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .skill { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px 22px; }
+    .skill h4 { font: 700 16px/1.2 "Space Grotesk", sans-serif; margin: 0 0 12px; }
+
+    /* Edu + languages */
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    .panel h4 { font: 700 18px/1.25 "Space Grotesk", sans-serif; margin: 0 0 4px; }
+    .panel p { margin: 0; color: var(--muted); }
+    .langs { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .langs li { display: grid; grid-template-columns: 110px 1fr auto; align-items: center; gap: 12px; font-weight: 600; }
+    .bar { height: 6px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+    .bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
+    .langs em { font-style: normal; color: var(--muted); font-size: 14px; font-weight: 500; }
+
+    /* Contact */
+    .cta { background: var(--text); color: var(--bg); border-radius: 26px; padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
+    .cta h2 { color: var(--bg); }
+    .cta p { color: color-mix(in srgb, var(--bg) 72%, var(--text)); margin: 12px 0 0; max-width: 520px; }
+    .cta .actions { justify-content: flex-end; }
+    .cta .btn { background: transparent; color: var(--bg); border-color: color-mix(in srgb, var(--bg) 30%, transparent); }
+    .cta .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    @media (max-width: 820px) { .cta { grid-template-columns: 1fr; } .cta .actions { justify-content: flex-start; } }
+
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 13.5px; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer details { max-width: 640px; }
+    footer summary { cursor: pointer; font-weight: 600; }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
   </style>
 </head>
 <body>
-  <header class="wrap">
-    <div class="kicker">Portfolio · App showcases</div>
-    <h1>Youssef Abdelmonem</h1>
-    <p class="role">Flutter Developer</p>
-    <p class="lede">I design and build mobile apps in Flutter, from clean architecture and state management to Firebase backends and AI features. Below are short showcase videos of apps I've built.</p>
-    <div class="links">
-      <a class="btn primary" href="https://www.linkedin.com/in/youssefabdelmonem/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <span class="badge">📍 Open to roles in Germany</span>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-lang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-gh" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></symbol>
+  </svg>
+
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="wrap">
+      <a class="logo" href="#top"><i>YR</i>Youssef Ramadan</a>
+      <ul>
+        <li><a href="#projects" data-i18n="nav.projects">Projekte</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Erfahrung</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Kenntnisse</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+      <div class="lang" role="group" aria-label="Sprache / Language">
+        <button type="button" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <section class="wrap">
-    <h2>Showcases</h2>
-    <div id="projects"></div>
-  </section>
+  <main id="top">
+    <header class="wrap hero">
+      <div>
+        <span class="status" data-i18n="hero.status">Sofort verfügbar · offen für Festanstellung</span>
+        <h1>Youssef Ramadan</h1>
+        <p class="role" data-i18n="hero.role">Senior Flutter Engineer · AI-First Development</p>
+        <p class="lede" data-i18n="hero.lede">Ich entwickle skalierbare, wartbare Mobile Apps mit Flutter – von komplexen Multi-Step-Flows und Echtzeit-Features bis zu sicheren, regulierten Fintech-Produkten. Mit Clean Architecture, Tests und CI/CD vom technischen Konzept bis zum Store-Release.</p>
+        <ul class="meta">
+          <li><svg><use href="#i-pin"/></svg><span data-i18n="hero.loc">Dortmund, Deutschland</span></li>
+          <li><svg><use href="#i-lang"/></svg><span data-i18n="hero.langs">Deutsch B2 · Englisch sehr gut · Arabisch Muttersprache</span></li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" href="mailto:youssefabdelmonem2000@gmail.com"><svg><use href="#i-mail"/></svg><span data-i18n="cta.mail">Kontakt aufnehmen</span></a>
+          <a class="btn" href="assets/Youssef_Ramadan_CV.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg><span data-i18n="cta.cv">Lebenslauf (PDF)</span></a>
+          <a class="btn" href="https://github.com/YoussefAbdelmonem" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-gh"/></svg>GitHub</a>
+          <a class="btn" href="https://linkedin.com/in/youssef-abdelmonem-56a3bb1a2" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="portrait"><img src="assets/youssef.jpg" alt="Porträt von Youssef Ramadan" width="600" height="600" /></div>
+    </header>
 
-  <section class="wrap">
-    <h2>What I work with</h2>
-    <div class="skills">
-      <div class="skill"><h4>Mobile</h4><p>Flutter · Dart · iOS & Android · responsive UI · custom animations & painters</p></div>
-      <div class="skill"><h4>Architecture</h4><p>Clean Architecture · feature-first structure · BLoC / Cubit · dependency injection (get_it)</p></div>
-      <div class="skill"><h4>Backend & data</h4><p>Firebase (Auth, Firestore, Cloud Functions, Messaging) · REST with Dio · local storage</p></div>
-      <div class="skill"><h4>AI features</h4><p>Claude API · OpenAI image models · on-device image processing in isolates</p></div>
-      <div class="skill"><h4>Quality</h4><p>Unit tests · on-device integration tests · localization (English / Arabic)</p></div>
-      <div class="skill"><h4>Languages</h4><p>Arabic · English</p></div>
+    <div class="wrap">
+      <div class="facts">
+        <div class="fact"><b>4+</b><span data-i18n="facts.years">Jahre Berufserfahrung</span></div>
+        <div class="fact"><b>15+</b><span data-i18n="facts.apps">veröffentlichte Apps</span></div>
+        <div class="fact"><b>3</b><span data-i18n="facts.stores">App Stores: Apple, Google, Huawei</span></div>
+        <div class="fact"><b>B2</b><span data-i18n="facts.german">Deutsch – im Alltag und im Team</span></div>
+      </div>
     </div>
-  </section>
 
-  <footer class="wrap">© Youssef Abdelmonem · Videos made with Remotion</footer>
+    <section id="projects" class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow" data-i18n="projects.eyebrow">Projekte</p><h2 data-i18n="projects.title">Apps, die ich gebaut habe</h2></div>
+        <p data-i18n="projects.sub">Produktiv-Apps in App Store, Google Play und AppGallery. Kurze Showcase-Videos zeigen die wichtigsten Flows.</p>
+      </div>
+      <div id="featured"></div>
+      <div class="grid" id="apps"></div>
+    </section>
+
+    <section class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow" data-i18n="approach.eyebrow">Arbeitsweise</p><h2 data-i18n="approach.title">Wie ich arbeite</h2></div>
+      </div>
+      <div class="approach">
+        <div class="pillar"><div class="ico"><svg><use href="#i-layers"/></svg></div><h4 data-i18n="ap1.t">Saubere Architektur</h4><p data-i18n="ap1.d">Clean Architecture, BLoC/Cubit und feature-basierte Module. Ich definiere Architektur- und Coding-Standards, damit komplexe Multi-Role-Apps wartbar und testbar bleiben.</p></div>
+        <div class="pillar"><div class="ico"><svg><use href="#i-check"/></svg></div><h4 data-i18n="ap2.t">Qualität & Tests</h4><p data-i18n="ap2.d">Unit-, Widget- und Golden-Tests, statische Analyse und Code Reviews über Pull Requests. Dazu Dokumentation, mit der neue Entwickler schnell produktiv werden.</p></div>
+        <div class="pillar"><div class="ico"><svg><use href="#i-rocket"/></svg></div><h4 data-i18n="ap3.t">Release & Monitoring</h4><p data-i18n="ap3.d">CI/CD mit GitHub Actions, Fastlane und Codemagic. Nach jedem Release überwache ich App-Health mit Crashlytics, Sentry und Flutter DevTools.</p></div>
+        <div class="pillar"><div class="ico"><svg><use href="#i-spark"/></svg></div><h4 data-i18n="ap4.t">KI-gestützt – aber geprüft</h4><p data-i18n="ap4.d">Täglich Claude Code mit Projektanweisungen und Figma MCP für schnelles Design-to-Code. Jede Änderung wird reviewed, analysiert und getestet, bevor sie live geht.</p></div>
+      </div>
+    </section>
+
+    <section id="experience" class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow" data-i18n="exp.eyebrow">Berufserfahrung</p><h2 data-i18n="exp.title">Stationen</h2></div>
+      </div>
+      <div class="timeline">
+        <article class="job">
+          <time data-i18n="job1.date">09/2024 – heute</time>
+          <div>
+            <h4>Flutter Developer</h4>
+            <p class="co">Al Almiya Alhura</p>
+            <ul data-i18n-list="job1.points"></ul>
+          </div>
+        </article>
+        <article class="job">
+          <time>11/2022 – 09/2024</time>
+          <div>
+            <h4>Flutter Developer</h4>
+            <p class="co">Neop</p>
+            <ul data-i18n-list="job2.points"></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow" data-i18n="skills.eyebrow">Kenntnisse</p><h2 data-i18n="skills.title">Technologien & Tools</h2></div>
+      </div>
+      <div class="skills" id="skill-list"></div>
+    </section>
+
+    <section class="wrap">
+      <div class="two">
+        <div class="panel">
+          <p class="eyebrow" data-i18n="edu.eyebrow">Ausbildung</p>
+          <h4 data-i18n="edu.degree">B.Sc. Bioinformatik</h4>
+          <p data-i18n="edu.school">Fakultät für Informatik und Informationswissenschaften, Universität Mansoura, Ägypten</p>
+          <p style="margin-top:8px;font-weight:600">09/2018 – 06/2023</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow" data-i18n="langs.eyebrow">Sprachen</p>
+          <ul class="langs">
+            <li><span data-i18n="langs.de">Deutsch</span><span class="bar"><i style="width:68%"></i></span><em>B2</em></li>
+            <li><span data-i18n="langs.en">Englisch</span><span class="bar"><i style="width:85%"></i></span><em data-i18n="langs.enlvl">sehr gut</em></li>
+            <li><span data-i18n="langs.ar">Arabisch</span><span class="bar"><i style="width:100%"></i></span><em data-i18n="langs.arlvl">Muttersprache</em></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap">
+      <div class="cta">
+        <div>
+          <h2 data-i18n="contact.title">Lassen Sie uns sprechen.</h2>
+          <p data-i18n="contact.text">Ich bin ab sofort verfügbar und freue mich über Gespräche zu Flutter-Positionen in Deutschland – vor Ort in NRW, hybrid oder remote.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:youssefabdelmonem2000@gmail.com"><svg><use href="#i-mail"/></svg>youssefabdelmonem2000@gmail.com</a>
+          <a class="btn" href="assets/Youssef_Ramadan_CV.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg><span data-i18n="cta.cv">Lebenslauf (PDF)</span></a>
+          <a class="btn" href="https://linkedin.com/in/youssef-abdelmonem-56a3bb1a2" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Youssef Ramadan</span>
+      <details>
+        <summary data-i18n="privacy.t">Datenschutz</summary>
+        <p data-i18n="privacy.d">Diese Website setzt keine Cookies, nutzt kein Tracking und lädt keine Inhalte von Drittanbietern; Schriften und Videos werden lokal ausgeliefert. Gehostet wird die Seite bei GitHub Pages (GitHub Inc.), das beim Aufruf technisch notwendige Daten wie die IP-Adresse in Server-Logs verarbeitet.</p>
+      </details>
+    </div>
+  </footer>
 
   <script>
-    // Add a new showcase by appending one object here (and dropping its files in videos/ and posters/).
-    const PROJECTS = [
+  /* ================================================================
+     PROJECTS — add a showcase video by filling the `videos` array of
+     an app. Put the MP4 in videos/ and a poster JPG in posters/.
+       { label: "Deutsch", src: "videos/x.mp4", poster: "posters/x.jpg", lang: "de" }
+     `lang` (optional) picks the version shown first for that language.
+     `vertical: true` on an app keeps tall 9:16 recordings tidy.
+     Set `featured: true` to show an app as the large card on top.
+     ================================================================ */
+    const APPS = [
       {
-        title: "Outfit AI",
-        description:
-          "One outfit photo becomes clean product shots, an auto-collected wardrobe and a dressed, realistic avatar. Items are cut out on-device (hands and skin removed), enhanced once with an AI image model, and arranged on an outfit board or in a pixel-level cut-out editor.",
-        tags: ["Flutter 3.47 · Dart 3", "BLoC / Cubit", "Clean Architecture", "Firebase Cloud Functions", "Claude API", "OpenAI Images", "Isolates", "Integration tests"],
-        versions: [
-          { label: "English 16:9", src: "videos/outfit-ai-showcase-en-16x9.mp4", poster: "posters/outfit-ai-en.jpg" },
-          { label: "Deutsch 16:9", src: "videos/outfit-ai-showcase-de-16x9.mp4", poster: "posters/outfit-ai-de.jpg" },
-          { label: "Vertical 9:16", src: "videos/outfit-ai-showcase-en-9x16.mp4", poster: "posters/outfit-ai-vertical.jpg" },
+        name: "Outfit AI", featured: true, hue: "#6C4CE0",
+        kind: { de: "Eigenes Projekt · KI", en: "Personal project · AI" },
+        desc: {
+          de: "Aus einem einzigen Outfit-Foto werden saubere Produktbilder, ein automatisch angelegter Kleiderschrank und ein realistisch angezogener Avatar. Kleidungsstücke werden on-device freigestellt (Hände und Haut entfernt), einmalig mit einem KI-Bildmodell verbessert und auf einem Outfit-Board oder in einem pixelgenauen Freistell-Editor angeordnet.",
+          en: "One outfit photo becomes clean product shots, an auto-collected wardrobe and a dressed, realistic avatar. Items are cut out on-device (hands and skin removed), enhanced once with an AI image model, and arranged on an outfit board or in a pixel-level cut-out editor."
+        },
+        tags: ["Flutter · Dart 3", "BLoC / Cubit", "Clean Architecture", "Firebase Cloud Functions", "Claude API", "OpenAI Images", "Isolates", "Integration Tests"],
+        videos: [
+          { label: "Deutsch 16:9", src: "videos/outfit-ai-showcase-de-16x9.mp4", poster: "posters/outfit-ai-de.jpg", lang: "de" },
+          { label: "English 16:9", src: "videos/outfit-ai-showcase-en-16x9.mp4", poster: "posters/outfit-ai-en.jpg", lang: "en" },
+          { label: "Vertical 9:16", src: "videos/outfit-ai-showcase-en-9x16.mp4", poster: "posters/outfit-ai-vertical.jpg", vertical: true },
         ],
+      },
+      {
+        name: "Rakeez", hue: "#0F7B6C",
+        kind: { de: "Fintech · reguliertes Umfeld", en: "Fintech · regulated environment" },
+        desc: {
+          de: "Sichere Fintech-App zur Emission von Schuldtiteln und Sukuk. Sichere Authentifizierung und Umgang mit sensiblen Daten: verschlüsselte Token-Speicherung, biometrischer Login und Session-Timeout – mit Fokus auf Datenschutz und Compliance.",
+          en: "Secure fintech app for issuing debt instruments and Sukuk. Secure authentication and sensitive-data handling: encrypted token storage, biometric login and session timeout, with a focus on data protection and compliance."
+        },
+        tags: ["Security", "Biometrics", "Secure Storage", "Compliance"],
+        links: [
+          { label: "App Store", href: "https://apps.apple.com/us/app/rakeez-%D8%B1%D9%83%D9%8A%D8%B2/id1666327789" },
+          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=sa.rakeez.app" },
+          { label: "AppGallery", href: "https://appgallery.huawei.com/#/app/C110159905" },
+        ],
+        videos: [],
+      },
+      {
+        name: "Tamm Order", hue: "#E0662E",
+        kind: { de: "Liefer-Plattform · 3 Apps", en: "Delivery platform · 3 apps" },
+        desc: {
+          de: "Skalierbares Liefer-Ökosystem im Stil von Lieferando mit drei verbundenen Apps (Kunde, Anbieter, Fahrer): kompletter Bestell-Lebenszyklus, Live-Standortverfolgung und rollenbasierte Kommunikation zwischen allen Beteiligten.",
+          en: "Scalable Lieferando-style delivery ecosystem with three connected apps (customer, vendor, driver): full order lifecycle, real-time location tracking and role-based communication between all parties."
+        },
+        tags: ["Real-time", "Google Maps", "Multi-Role", "FCM"],
+        links: [
+          { label: { de: "App Store · Kunde", en: "App Store · Client" }, href: "https://apps.apple.com/us/app/tamm-order/id6748983606" },
+          { label: { de: "App Store · Anbieter", en: "App Store · Provider" }, href: "https://apps.apple.com/us/app/tamm-order-provider/id6749199838" },
+          { label: { de: "App Store · Fahrer", en: "App Store · Driver" }, href: "https://apps.apple.com/us/app/tamm-order-driver/id6749005272" },
+          { label: { de: "Google Play · Anbieter", en: "Google Play · Provider" }, href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderprovider" },
+          { label: { de: "Google Play · Fahrer", en: "Google Play · Driver" }, href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderdriver" },
+        ],
+        videos: [],
+      },
+      {
+        name: "Shamikh", hue: "#8A5A2B",
+        kind: { de: "Super-App · Pferdesport", en: "Super app · Equestrian" },
+        desc: {
+          de: "All-in-one-Plattform rund ums Pferd: Apotheken, Tierkliniken, Shops, Reitakademien und Ställe. Modulare Architektur, in der jede Kategorie eigene Such-, Buchungs- und Bestellregeln hat – vereint unter einem gemeinsamen State-Management.",
+          en: "All-in-one platform for the horse-care ecosystem: pharmacies, vet clinics, stores, riding academies and stables. Modular architecture where each category runs its own discovery, booking and ordering rules under a shared state layer."
+        },
+        tags: ["Modular Architecture", "Booking", "Ordering"],
+        status: { de: "Launch in Kürze", en: "Launching soon" },
+        links: [{ label: "TestFlight", href: "https://testflight.apple.com/join/nhDSk7fU" }],
+        videos: [],
+      },
+      {
+        name: "All-In Trade", hue: "#2F6FDB",
+        kind: { de: "Marktplatz", en: "Marketplace" },
+        desc: {
+          de: "Mobiler Marktplatz zum Kaufen und Verkaufen über viele Kategorien hinweg – mit erweiterten Filtern, In-App-Chat und direkter Kommunikation mit Verkäufern.",
+          en: "Mobile marketplace for buying and selling across many categories, with advanced filtering, in-app chat and direct seller communication."
+        },
+        tags: ["In-App Chat", "Filtering", "Socket.IO"],
+        links: [
+          { label: "App Store", href: "https://apps.apple.com/eg/app/all-in-quick-trade/id6746713475" },
+          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.alalmiyalhura.allin" },
+        ],
+        videos: [],
+      },
+      {
+        name: "Schooly", hue: "#D9A21B",
+        kind: { de: "E-Commerce · Schulbedarf", en: "E-commerce · School supplies" },
+        desc: {
+          de: "Shop-App, die Schulen und ihren Schulbedarf zusammenbringt: Eltern stöbern nach Schule und kaufen Uniformen und Material. Katalog, Filter, Warenkorb und Checkout mit zweisprachiger UI (Arabisch/Englisch, RTL).",
+          en: "Commerce app that brings schools and their required supplies together: parents browse by school and buy uniforms and essentials. Catalog, filtering, cart and checkout with a bilingual (Arabic/English, RTL) UI."
+        },
+        tags: ["Checkout", "Payments", "RTL / i18n"],
+        links: [
+          { label: "App Store", href: "https://apps.apple.com/us/app/schooly-%D8%B3%D9%83%D9%88%D9%84%D9%8A/id6781253849" },
+          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.schooly" },
+        ],
+        videos: [],
+      },
+      {
+        name: "EZ Booking", hue: "#C2417A",
+        kind: { de: "Buchungsplattform", en: "Booking platform" },
+        desc: {
+          de: "End-to-End-Buchungslösung für Salons und Freelancer mit Verfügbarkeit in Echtzeit und einer UX, die Suche und Buchung so kurz wie möglich macht.",
+          en: "End-to-end booking solution for salons and freelancers with real-time availability and a UX that keeps discovery and booking as short as possible."
+        },
+        tags: ["Real-time Availability", "UI/UX"],
+        links: [
+          { label: "App Store", href: "https://apps.apple.com/eg/app/ez-booking/id6743673207" },
+          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.alalmiyalhura.ezbooking" },
+        ],
+        videos: [],
+      },
+      {
+        name: "Seen", hue: "#5B4BC4",
+        kind: { de: "Social-Media-Management", en: "Social media management" },
+        desc: {
+          de: "Plattform für Markenwachstum und Kundenbindung: Social-Media-Kanäle verwalten, Beiträge planen und Performance auswerten.",
+          en: "Brand growth and customer engagement platform for managing social media channels, scheduling posts and tracking performance."
+        },
+        tags: ["Scheduling", "Analytics", "REST APIs"],
+        links: [
+          { label: "App Store", href: "https://apps.apple.com/eg/app/seen-%D8%B3-%D9%8A%D9%86/id6479956768" },
+          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.neop.seen" },
+        ],
+        videos: [],
       },
     ];
 
-    const root = document.getElementById("projects");
-    for (const p of PROJECTS) {
-      const el = document.createElement("article");
-      el.className = "project";
-      el.innerHTML = `
-        <div class="player"><video controls playsinline preload="metadata"></video></div>
-        <div class="body">
-          <div class="row"><h3></h3><div class="tabs" role="group" aria-label="Video version"></div></div>
-          <p class="desc"></p>
-          <ul class="chips"></ul>
-        </div>`;
-      el.querySelector("h3").textContent = p.title;
-      el.querySelector(".desc").textContent = p.description;
-      const chips = el.querySelector(".chips");
-      p.tags.forEach(t => { const li = document.createElement("li"); li.textContent = t; chips.append(li); });
-      const video = el.querySelector("video");
-      const tabs = el.querySelector(".tabs");
-      const pick = (v, btn) => {
-        video.src = v.src; video.poster = v.poster;
+    const SKILLS = [
+      { t: { de: "Flutter & Dart", en: "Flutter & Dart" }, items: ["Dart", "Flutter", "Futures & Streams", "Widget Lifecycle & Rendering", "Animations", "Flutter DevTools"] },
+      { t: { de: "Architektur", en: "Architecture" }, items: ["Clean Architecture", "BLoC / Cubit", "Feature-based Modules", "SOLID", "Design Patterns", "Design Systems"] },
+      { t: { de: "Testing & Qualität", en: "Testing & quality" }, items: ["Unit Tests", "Widget Tests", "Golden Tests", "Static Analysis", "Code Review"] },
+      { t: { de: "KI-gestützte Entwicklung", en: "AI-first engineering" }, items: ["Claude Code", "CLAUDE.md", "MCP (Figma)", "Context Management", "GitHub Copilot"] },
+      { t: { de: "Plattform & Integrationen", en: "Platform & integrations" }, items: ["REST APIs", "Firebase", "FCM Push", "Apple Pay & Card Payments", "Secure Storage", "Deep Links", "Google Maps", "Socket.IO · Pusher · SignalR", "Agora Video", "Crashlytics · Sentry"] },
+      { t: { de: "CI/CD & Tools", en: "CI/CD & tooling" }, items: ["GitHub Actions", "Fastlane", "Codemagic", "Git / GitHub", "Jira", "Figma"] },
+      { t: { de: "Außerdem", en: "Also" }, items: ["Kotlin", "Swift", "Java", "Node.js", "C#"] },
+    ];
+
+    const I18N = {
+      de: {
+        "job1.points": [
+          "Verantwortung für komplexe Features end-to-end – vom technischen Design bis zum Store-Release – gemeinsam mit Design, Produktmanagement und Backend in einem Ökosystem aus drei Apps (Kunde, Anbieter, Fahrer).",
+          "Architektur und Coding-Standards für alle Apps definiert (Clean Architecture, BLoC/Cubit), damit Multi-Role-Features wartbar und testbar bleiben.",
+          "Zahlungen (Kartenzahlung, Apple Pay), Firebase, FCM-Push und Analytics integriert. Race Conditions im Payment-Flow behoben – Beitrag zu 15 % höherer Nutzerbindung.",
+          "Technische Dokumentation (READMEs, Architektur-Übersichten, API-Notizen, Onboarding-Guides) und Monitoring nach jedem Release mit Crashlytics.",
+          "Claude Code mit Projektanweisungen und Figma MCP für schnelleres Design-to-Code; generierter Code wird per Review, statischer Analyse und Tests validiert.",
+        ],
+        "job2.points": [
+          "Arbeit im Scrum-Team mit Produktmanagement, QA und Scrum Master – Features von der Sprint-Planung über die QA-Abnahme bis zum Release.",
+          "App-Features umgesetzt und REST-APIs sowie Drittanbieter-Services integriert, um Funktionsumfang und Nutzererlebnis zu verbessern.",
+        ],
+        "video.soon": "Showcase-Video folgt",
+        "video.label": "Video-Version",
+      },
+      en: {
+        "nav.projects": "Projects", "nav.experience": "Experience", "nav.skills": "Skills", "nav.contact": "Contact",
+        "hero.status": "Available immediately · open to full-time roles",
+        "hero.role": "Senior Flutter Engineer · AI-First Development",
+        "hero.lede": "I build scalable, maintainable mobile apps with Flutter – from complex multi-step flows and real-time features to secure, regulated fintech products. With Clean Architecture, tests and CI/CD, from technical design to store release.",
+        "hero.loc": "Dortmund, Germany",
+        "hero.langs": "German B2 · English advanced · Arabic native",
+        "cta.mail": "Get in touch", "cta.cv": "Résumé (PDF)",
+        "facts.years": "years of professional experience", "facts.apps": "apps shipped", "facts.stores": "app stores: Apple, Google, Huawei", "facts.german": "German – at work and in the team",
+        "projects.eyebrow": "Projects", "projects.title": "Apps I've built",
+        "projects.sub": "Production apps on the App Store, Google Play and AppGallery. Short showcase videos walk through the key flows.",
+        "approach.eyebrow": "Approach", "approach.title": "How I work",
+        "ap1.t": "Clean architecture", "ap1.d": "Clean Architecture, BLoC/Cubit and feature-based modules. I define architecture and coding standards so complex multi-role apps stay maintainable and testable.",
+        "ap2.t": "Quality & testing", "ap2.d": "Unit, widget and golden tests, static analysis and code review through pull requests – plus documentation that gets new developers productive fast.",
+        "ap3.t": "Release & monitoring", "ap3.d": "CI/CD with GitHub Actions, Fastlane and Codemagic. After every release I monitor app health with Crashlytics, Sentry and Flutter DevTools.",
+        "ap4.t": "AI-assisted – and verified", "ap4.d": "Daily Claude Code with project instructions and Figma MCP for fast design-to-code. Every change is reviewed, analysed and tested before it ships.",
+        "exp.eyebrow": "Experience", "exp.title": "Where I've worked", "job1.date": "09/2024 – present",
+        "job1.points": [
+          "Own complex features end-to-end, from technical design to store release, with designers, product managers and backend engineers across a three-app ecosystem (customer, vendor, driver).",
+          "Defined the architecture and coding standards across apps (Clean Architecture, BLoC/Cubit) so multi-role features stay maintainable and testable.",
+          "Integrated payments (card checkout, Apple Pay), Firebase, FCM push and analytics. Fixed race conditions in the payment flow, contributing to a 15% increase in user retention.",
+          "Write technical documentation (READMEs, architecture overviews, API notes, onboarding guides) and monitor app health after each release with Crashlytics.",
+          "Use Claude Code with project instructions and Figma MCP to speed up design-to-code; generated code is validated through review, static analysis and tests.",
+        ],
+        "job2.points": [
+          "Worked in a Scrum team with product managers, QA and a Scrum Master, taking features from sprint planning through QA verification to release.",
+          "Implemented app features and integrated RESTful APIs and third-party services to improve functionality and user experience.",
+        ],
+        "skills.eyebrow": "Skills", "skills.title": "Technologies & tools",
+        "edu.eyebrow": "Education", "edu.degree": "B.Sc. in Bioinformatics", "edu.school": "Faculty of Computers & Information Sciences, Mansoura University, Egypt",
+        "langs.eyebrow": "Languages", "langs.de": "German", "langs.en": "English", "langs.enlvl": "advanced", "langs.ar": "Arabic", "langs.arlvl": "native",
+        "contact.title": "Let's talk.",
+        "contact.text": "I'm available immediately and happy to talk about Flutter roles in Germany – on-site in NRW, hybrid or remote.",
+        "privacy.t": "Privacy",
+        "privacy.d": "This website sets no cookies, uses no tracking and loads no third-party content; fonts and videos are served locally. It is hosted on GitHub Pages (GitHub Inc.), which processes technically necessary data such as IP addresses in server logs.",
+        "video.soon": "Showcase video coming soon",
+        "video.label": "Video version",
+      },
+    };
+
+    // Remember the German defaults written in the HTML so we can switch back.
+    document.querySelectorAll("[data-i18n]").forEach(el => { I18N.de[el.dataset.i18n] ??= el.textContent; });
+
+    let lang = "de";
+    const pick = v => (v && typeof v === "object" && !Array.isArray(v) ? v[lang] ?? v.en : v);
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const initials = n => n.split(/\s|-/).filter(Boolean).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+
+    function mediaFor(app) {
+      const wrap = document.createElement("div");
+      if (!app.videos || !app.videos.length) {
+        wrap.className = "media";
+        wrap.innerHTML = `<div class="placeholder" style="--hue:${app.hue || "#6C4CE0"}"><div><div class="mono">${esc(initials(app.name))}</div><small><svg width="12" height="12"><use href="#i-play"/></svg>${esc(I18N[lang]["video.soon"])}</small></div></div>`;
+        return { el: wrap, tabs: null };
+      }
+      wrap.className = "media";
+      const video = document.createElement("video");
+      video.controls = true; video.playsInline = true; video.preload = "metadata";
+      wrap.append(video);
+      const tabs = document.createElement("div");
+      tabs.className = "tabs"; tabs.setAttribute("role", "group"); tabs.setAttribute("aria-label", I18N[lang]["video.label"]);
+      const choose = (v, btn) => {
+        video.src = v.src; if (v.poster) video.poster = v.poster;
+        wrap.classList.toggle("vertical", !!(v.vertical || app.vertical));
         tabs.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
       };
-      p.versions.forEach((v, i) => {
+      const first = app.videos.find(v => v.lang === lang) || app.videos[0];
+      app.videos.forEach(v => {
         const b = document.createElement("button");
-        b.type = "button"; b.textContent = v.label;
-        b.onclick = () => pick(v, b);
+        b.type = "button"; b.textContent = pick(v.label);
+        b.onclick = () => choose(v, b);
         tabs.append(b);
-        if (i === 0) pick(v, b);
+        if (v === first) choose(v, b);
       });
-      root.append(el);
+      return { el: wrap, tabs: app.videos.length > 1 ? tabs : null };
     }
+
+    function card(app) {
+      const el = document.createElement("article");
+      el.className = "card" + (app.featured ? " featured" : "");
+      const { el: media, tabs } = mediaFor(app);
+      const body = document.createElement("div");
+      body.className = "body";
+      const links = (app.links || []).map(l => `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(pick(l.label))} ↗</a>`).join("");
+      body.innerHTML = `
+        <p class="kind">${esc(pick(app.kind))}</p>
+        <h3>${esc(app.name)}</h3>
+        <p class="desc">${esc(pick(app.desc))}</p>
+        <ul class="chips">${app.tags.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
+        <div class="stores">${app.status ? `<span class="tag">${esc(pick(app.status))}</span>` : ""}${links}</div>`;
+      if (tabs) body.insertBefore(tabs, body.querySelector(".chips"));
+      el.append(media, body);
+      return el;
+    }
+
+    function render() {
+      const featured = document.getElementById("featured"), grid = document.getElementById("apps");
+      featured.replaceChildren(...APPS.filter(a => a.featured).map(card));
+      grid.replaceChildren(...APPS.filter(a => !a.featured).map(card));
+      document.getElementById("skill-list").replaceChildren(...SKILLS.map(s => {
+        const d = document.createElement("div"); d.className = "skill";
+        d.innerHTML = `<h4>${esc(pick(s.t))}</h4><ul class="chips">${s.items.map(i => `<li>${esc(i)}</li>`).join("")}</ul>`;
+        return d;
+      }));
+      document.querySelectorAll("[data-i18n-list]").forEach(ul => {
+        ul.innerHTML = (I18N[lang][ul.dataset.i18nList] || []).map(p => `<li>${esc(p)}</li>`).join("");
+      });
+    }
+
+    function setLang(next) {
+      lang = next === "en" ? "en" : "de";
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const v = I18N[lang][el.dataset.i18n]; if (typeof v === "string") el.textContent = v;
+      });
+      document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+      document.querySelector(".portrait img").alt = lang === "de" ? "Porträt von Youssef Ramadan" : "Portrait of Youssef Ramadan";
+      render();
+      try { localStorage.setItem("lang", lang); } catch (e) {}
+    }
+
+    document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // German by default; ?lang=en in the URL (handy in English applications) or a saved choice wins.
+    let initial = new URLSearchParams(location.search).get("lang");
+    if (!initial) { try { initial = localStorage.getItem("lang"); } catch (e) {} }
+    setLang(initial || "de");
   </script>
 </body>
 </html>
