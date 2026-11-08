@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Youssef Abdelmonem · Flutter Developer</title>
+  <meta name="description" content="Flutter developer portfolio — app showcase videos by Youssef Abdelmonem. Open to roles in Germany." />
+  <meta property="og:title" content="Youssef Abdelmonem · Flutter Developer" />
+  <meta property="og:description" content="App showcase videos — Flutter, BLoC, Firebase, AI integrations." />
+  <meta property="og:image" content="posters/outfit-ai-en.jpg" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%236C4CE0'/><text x='32' y='43' font-family='Arial' font-weight='700' font-size='30' fill='white' text-anchor='middle'>YA</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14111F; --bg: #FFFFFF; --mist: #F1ECFB; --violet: #6C4CE0; --coral: #FF7A59;
+      --text: #14111F; --muted: #6E6880; --card: #FFFFFF; --line: #E6E0F3;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #14111F; --mist: #1D1930; --text: #F4F1FB; --muted: #A9A2BF; --card: #1D1930; --line: #2D2843; --violet: #9B82FF; }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--text); }
+    body { font-family: Inter, system-ui, sans-serif; line-height: 1.55; }
+    a { color: var(--violet); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    header { padding: 72px 0 40px; }
+    .kicker { display: flex; align-items: center; gap: 12px; font: 600 13px/1 "Space Grotesk", sans-serif;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--violet); }
+    .kicker::before { content: ""; width: 36px; height: 3px; background: var(--violet); border-radius: 2px; }
+    h1 { font: 700 clamp(40px, 7vw, 76px)/1.02 "Space Grotesk", sans-serif; letter-spacing: -.03em; margin: 18px 0 10px; }
+    .role { font: 600 22px/1.3 "Space Grotesk", sans-serif; color: var(--violet); margin: 0 0 14px; }
+    .lede { color: var(--muted); max-width: 620px; font-size: 18px; margin: 0 0 24px; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 999px;
+      font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid var(--line); color: var(--text); }
+    .btn.primary { background: var(--violet); border-color: var(--violet); color: #fff; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--mist); color: var(--muted);
+      font-size: 13px; font-weight: 500; }
+    section { padding: 24px 0 72px; }
+    h2 { font: 700 30px/1.2 "Space Grotesk", sans-serif; letter-spacing: -.02em; margin: 0 0 24px; }
+    .project { background: var(--card); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; margin-bottom: 36px; }
+    .player { position: relative; background: #000; }
+    .player video { display: block; width: 100%; height: auto; max-height: 78vh; margin: 0 auto; }
+    .body { padding: 22px 24px 26px; }
+    .row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    h3 { font: 700 24px/1.2 "Space Grotesk", sans-serif; margin: 0; }
+    .tabs { display: inline-flex; background: var(--mist); border-radius: 999px; padding: 4px; gap: 2px; flex-wrap: wrap; }
+    .tabs button { border: 0; background: transparent; color: var(--muted); font: 600 13px Inter, sans-serif;
+      padding: 7px 12px; border-radius: 999px; cursor: pointer; }
+    .tabs button[aria-pressed="true"] { background: var(--violet); color: #fff; }
+    .desc { color: var(--muted); margin: 12px 0 14px; max-width: 760px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .chips li { font-size: 13px; font-weight: 500; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); }
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .skill { border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; background: var(--card); }
+    .skill h4 { font: 700 17px/1.2 "Space Grotesk", sans-serif; margin: 0 0 6px; color: var(--violet); }
+    .skill p { margin: 0; color: var(--muted); font-size: 15px; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="kicker">Portfolio · App showcases</div>
+    <h1>Youssef Abdelmonem</h1>
+    <p class="role">Flutter Developer</p>
+    <p class="lede">I design and build mobile apps in Flutter, from clean architecture and state management to Firebase backends and AI features. Below are short showcase videos of apps I've built.</p>
+    <div class="links">
+      <a class="btn primary" href="https://www.linkedin.com/in/youssefabdelmonem/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <span class="badge">📍 Open to roles in Germany</span>
+    </div>
+  </header>
+
+  <section class="wrap">
+    <h2>Showcases</h2>
+    <div id="projects"></div>
+  </section>
+
+  <section class="wrap">
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div class="skill"><h4>Mobile</h4><p>Flutter · Dart · iOS & Android · responsive UI · custom animations & painters</p></div>
+      <div class="skill"><h4>Architecture</h4><p>Clean Architecture · feature-first structure · BLoC / Cubit · dependency injection (get_it)</p></div>
+      <div class="skill"><h4>Backend & data</h4><p>Firebase (Auth, Firestore, Cloud Functions, Messaging) · REST with Dio · local storage</p></div>
+      <div class="skill"><h4>AI features</h4><p>Claude API · OpenAI image models · on-device image processing in isolates</p></div>
+      <div class="skill"><h4>Quality</h4><p>Unit tests · on-device integration tests · localization (English / Arabic)</p></div>
+      <div class="skill"><h4>Languages</h4><p>Arabic · English</p></div>
+    </div>
+  </section>
+
+  <footer class="wrap">© Youssef Abdelmonem · Videos made with Remotion</footer>
+
+  <script>
+    // Add a new showcase by appending one object here (and dropping its files in videos/ and posters/).
+    const PROJECTS = [
+      {
+        title: "Outfit AI",
+        description:
+          "One outfit photo becomes clean product shots, an auto-collected wardrobe and a dressed, realistic avatar. Items are cut out on-device (hands and skin removed), enhanced once with an AI image model, and arranged on an outfit board or in a pixel-level cut-out editor.",
+        tags: ["Flutter 3.47 · Dart 3", "BLoC / Cubit", "Clean Architecture", "Firebase Cloud Functions", "Claude API", "OpenAI Images", "Isolates", "Integration tests"],
+        versions: [
+          { label: "English 16:9", src: "videos/outfit-ai-showcase-en-16x9.mp4", poster: "posters/outfit-ai-en.jpg" },
+          { label: "Deutsch 16:9", src: "videos/outfit-ai-showcase-de-16x9.mp4", poster: "posters/outfit-ai-de.jpg" },
+          { label: "Vertical 9:16", src: "videos/outfit-ai-showcase-en-9x16.mp4", poster: "posters/outfit-ai-vertical.jpg" },
+        ],
+      },
+    ];
+
+    const root = document.getElementById("projects");
+    for (const p of PROJECTS) {
+      const el = document.createElement("article");
+      el.className = "project";
+      el.innerHTML = `
+        <div class="player"><video controls playsinline preload="metadata"></video></div>
+        <div class="body">
+          <div class="row"><h3></h3><div class="tabs" role="group" aria-label="Video version"></div></div>
+          <p class="desc"></p>
+          <ul class="chips"></ul>
+        </div>`;
+      el.querySelector("h3").textContent = p.title;
+      el.querySelector(".desc").textContent = p.description;
+      const chips = el.querySelector(".chips");
+      p.tags.forEach(t => { const li = document.createElement("li"); li.textContent = t; chips.append(li); });
+      const video = el.querySelector("video");
+      const tabs = el.querySelector(".tabs");
+      const pick = (v, btn) => {
+        video.src = v.src; video.poster = v.poster;
+        tabs.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+      };
+      p.versions.forEach((v, i) => {
+        const b = document.createElement("button");
+        b.type = "button"; b.textContent = v.label;
+        b.onclick = () => pick(v, b);
+        tabs.append(b);
+        if (i === 0) pick(v, b);
+      });
+      root.append(el);
+    }
+  </script>
+</body>
+</html>
