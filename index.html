@@ -104,13 +104,11 @@
     .media { position: relative; background: #0D0B14; display: grid; place-items: center; }
     .media video { display: block; width: 100%; height: 100%; max-height: 78vh; object-fit: contain; }
     .media.vertical video { max-height: 640px; width: auto; }
-    .media.has-cover { display: block; }
-    .media img.cover { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
     .placeholder { aspect-ratio: 16 / 10; width: 100%; display: grid; place-items: center; text-align: center; color: #CFC8E6;
       background: radial-gradient(120% 90% at 20% 0%, color-mix(in srgb, var(--hue, #6C4CE0) 55%, #0D0B14) 0%, #0D0B14 70%); }
     .placeholder .mono { width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; margin: 0 auto 12px;
       font: 700 26px "Space Grotesk", sans-serif; color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); }
-    .placeholder small { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; letter-spacing: .04em; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,.08); }
+    .placeholder .pname { font: 700 clamp(24px, 2.6vw, 30px)/1.15 "Space Grotesk", sans-serif; letter-spacing: -.02em; color: #fff; margin: 0; padding: 0 16px; }
     .body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
     .kind { font-size: 13px; font-weight: 600; color: var(--accent); margin: 0; }
     h3 { font: 700 22px/1.2 "Space Grotesk", sans-serif; letter-spacing: -.015em; margin: 0; }
@@ -227,7 +225,7 @@
           <a class="btn primary" href="mailto:youssefabdelmonem2000@gmail.com"><svg><use href="#i-mail"/></svg><span data-i18n="cta.mail">Kontakt aufnehmen</span></a>
           <a class="btn" href="assets/Youssef_Ramadan_CV.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg><span data-i18n="cta.cv">Lebenslauf (PDF)</span></a>
           <a class="btn" href="https://github.com/YoussefAbdelmonem" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-gh"/></svg>GitHub</a>
-          <a class="btn" href="https://linkedin.com/in/youssef-abdelmonem-56a3bb1a2" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg>LinkedIn</a>
+          <a class="btn" href="https://www.linkedin.com/in/youssefabdelmonem/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg>LinkedIn</a>
         </div>
       </div>
       <div class="portrait"><img src="assets/youssef.jpg" alt="Porträt von Youssef Ramadan" width="600" height="600" /></div>
@@ -322,7 +320,7 @@
         <div class="actions">
           <a class="btn primary" href="mailto:youssefabdelmonem2000@gmail.com"><svg><use href="#i-mail"/></svg>youssefabdelmonem2000@gmail.com</a>
           <a class="btn" href="assets/Youssef_Ramadan_CV.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg><span data-i18n="cta.cv">Lebenslauf (PDF)</span></a>
-          <a class="btn" href="https://linkedin.com/in/youssef-abdelmonem-56a3bb1a2" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>LinkedIn</a>
+          <a class="btn" href="https://www.linkedin.com/in/youssefabdelmonem/" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>LinkedIn</a>
         </div>
       </div>
     </section>
@@ -346,7 +344,7 @@
      `lang` (optional) picks the version shown first for that language.
      `vertical: true` on an app keeps tall 9:16 recordings tidy.
      Set `featured: true` to show an app as the large card on top.
-     Apps without videos show `cover` (a 1600×1000 JPG in covers/).
+     Apps without videos show a placeholder with the project name.
      ================================================================ */
     const APPS = [
       {
@@ -383,7 +381,6 @@
       },
       {
         name: "Rakeez", hue: "#0F7B6C",
-        cover: "covers/rakeez.jpg",
         kind: { de: "Fintech · reguliertes Umfeld", en: "Fintech · regulated environment" },
         desc: {
           de: "Sichere Fintech-App zur Emission von Schuldtiteln und Sukuk. Sichere Authentifizierung und Umgang mit sensiblen Daten: verschlüsselte Token-Speicherung, biometrischer Login und Session-Timeout – mit Fokus auf Datenschutz und Compliance.",
@@ -399,7 +396,6 @@
       },
       {
         name: "Tamm Order", hue: "#E0662E",
-        cover: "covers/tamm-order.jpg",
         kind: { de: "Liefer-Plattform · 3 Apps", en: "Delivery platform · 3 apps" },
         desc: {
           de: "Skalierbares Liefer-Ökosystem im Stil von Lieferando mit drei verbundenen Apps (Kunde, Anbieter, Fahrer): kompletter Bestell-Lebenszyklus, Live-Standortverfolgung und rollenbasierte Kommunikation zwischen allen Beteiligten.",
@@ -417,7 +413,6 @@
       },
       {
         name: "Shamikh", hue: "#8A5A2B",
-        cover: "covers/shamikh.jpg",
         kind: { de: "Super-App · Pferdesport", en: "Super app · Equestrian" },
         desc: {
           de: "All-in-one-Plattform rund ums Pferd: Apotheken, Tierkliniken, Shops, Reitakademien und Ställe. Modulare Architektur, in der jede Kategorie eigene Such-, Buchungs- und Bestellregeln hat – vereint unter einem gemeinsamen State-Management.",
@@ -430,7 +425,6 @@
       },
       {
         name: "Schooly", hue: "#D9A21B",
-        cover: "covers/schooly.jpg",
         kind: { de: "E-Commerce · Schulbedarf", en: "E-commerce · School supplies" },
         desc: {
           de: "Shop-App, die Schulen und ihren Schulbedarf zusammenbringt: Eltern stöbern nach Schule und kaufen Uniformen und Material. Katalog, Filter, Warenkorb und Checkout mit zweisprachiger UI (Arabisch/Englisch, RTL).",
@@ -445,7 +439,6 @@
       },
       {
         name: "EZ Booking", hue: "#C2417A",
-        cover: "covers/ez-booking.jpg",
         kind: { de: "Buchungsplattform", en: "Booking platform" },
         desc: {
           de: "End-to-End-Buchungslösung für Salons und Freelancer mit Verfügbarkeit in Echtzeit und einer UX, die Suche und Buchung so kurz wie möglich macht.",
@@ -460,7 +453,6 @@
       },
       {
         name: "Seen", hue: "#5B4BC4",
-        cover: "covers/seen.jpg",
         kind: { de: "Social-Media-Management", en: "Social media management" },
         desc: {
           de: "Plattform für Markenwachstum und Kundenbindung: Social-Media-Kanäle verwalten, Beiträge planen und Performance auswerten.",
@@ -498,7 +490,6 @@
           "Arbeit im Scrum-Team mit Produktmanagement, QA und Scrum Master – Features von der Sprint-Planung über die QA-Abnahme bis zum Release.",
           "App-Features umgesetzt und REST-APIs sowie Drittanbieter-Services integriert, um Funktionsumfang und Nutzererlebnis zu verbessern.",
         ],
-        "cover.alt": "App-Icon und Screenshots",
         "video.label": "Video-Version",
       },
       en: {
@@ -536,7 +527,6 @@
         "contact.text": "I'm available immediately and happy to talk about Flutter roles in Germany – on-site in NRW, hybrid or remote.",
         "privacy.t": "Privacy",
         "privacy.d": "This website sets no cookies, uses no tracking and loads no third-party content; fonts and videos are served locally. It is hosted on GitHub Pages (GitHub Inc.), which processes technically necessary data such as IP addresses in server logs.",
-        "cover.alt": "app icon and screenshots",
         "video.label": "Video version",
       },
     };
@@ -552,10 +542,8 @@
     function mediaFor(app) {
       const wrap = document.createElement("div");
       if (!app.videos || !app.videos.length) {
-        wrap.className = app.cover ? "media has-cover" : "media";
-        wrap.innerHTML = app.cover
-          ? `<img class="cover" src="${esc(app.cover)}" alt="${esc(app.name)} – ${esc(I18N[lang]["cover.alt"])}" width="1600" height="1000" loading="lazy" decoding="async" />`
-          : `<div class="placeholder" style="--hue:${app.hue || "#6C4CE0"}"><div class="mono">${esc(initials(app.name))}</div></div>`;
+        wrap.className = "media";
+        wrap.innerHTML = `<div class="placeholder" style="--hue:${app.hue || "#6C4CE0"}" aria-hidden="true"><div><div class="mono">${esc(initials(app.name))}</div><p class="pname">${esc(app.name)}</p></div></div>`;
         return { el: wrap, tabs: null };
       }
       wrap.className = "media";
