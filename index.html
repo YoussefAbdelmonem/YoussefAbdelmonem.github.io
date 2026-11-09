@@ -347,6 +347,24 @@
      ================================================================ */
     const APPS = [
       {
+        name: "All-In Trade", featured: true, hue: "#645AA7",
+        kind: { de: "Marktplatz · Arabisch/Englisch", en: "Marketplace · Arabic/English" },
+        desc: {
+          de: "Zweisprachiger Marktplatz (Arabisch/Englisch, volles RTL) für Saudi-Arabien: Anzeigen mit Detaildaten durchsuchen, mit Live-Preishistogramm filtern, in Echtzeit mit Verkäufern chatten (SignalR) und Anzeigen über einen 10-Schritte-Assistenten aufgeben, dessen Merkmale sich der Kategorie anpassen.",
+          en: "Bilingual (Arabic/English, full RTL) marketplace for Saudi Arabia: browse spec-rich listings, filter with a live price histogram, chat with sellers in real time (SignalR) and post ads through a 10-step wizard whose specs adapt to the category."
+        },
+        tags: ["Flutter", "BLoC / Cubit", "GetIt", "Dio", "SignalR Chat", "Google Maps", "FCM Push", "RTL / i18n", "Deep Links · QR"],
+        links: [
+          { label: "App Store", href: "https://apps.apple.com/eg/app/all-in-quick-trade/id6746713475" },
+          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.alalmiyalhura.allin" },
+        ],
+        videos: [
+          { label: "Deutsch 16:9", src: "videos/all-in-trade-showcase-de-16x9.mp4", poster: "posters/all-in-trade-de.jpg", lang: "de" },
+          { label: "English 16:9", src: "videos/all-in-trade-showcase-en-16x9.mp4", poster: "posters/all-in-trade-en.jpg", lang: "en" },
+          { label: "Vertical 9:16", src: "videos/all-in-trade-showcase-en-9x16.mp4", poster: "posters/all-in-trade-vertical.jpg", vertical: true },
+        ],
+      },
+      {
         name: "Outfit AI", featured: true, hue: "#6C4CE0",
         kind: { de: "Eigenes Projekt · KI", en: "Personal project · AI" },
         desc: {
@@ -402,20 +420,6 @@
         tags: ["Modular Architecture", "Booking", "Ordering"],
         status: { de: "Launch in Kürze", en: "Launching soon" },
         links: [{ label: "TestFlight", href: "https://testflight.apple.com/join/nhDSk7fU" }],
-        videos: [],
-      },
-      {
-        name: "All-In Trade", hue: "#2F6FDB",
-        kind: { de: "Marktplatz", en: "Marketplace" },
-        desc: {
-          de: "Mobiler Marktplatz zum Kaufen und Verkaufen über viele Kategorien hinweg – mit erweiterten Filtern, In-App-Chat und direkter Kommunikation mit Verkäufern.",
-          en: "Mobile marketplace for buying and selling across many categories, with advanced filtering, in-app chat and direct seller communication."
-        },
-        tags: ["In-App Chat", "Filtering", "Socket.IO"],
-        links: [
-          { label: "App Store", href: "https://apps.apple.com/eg/app/all-in-quick-trade/id6746713475" },
-          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.alalmiyalhura.allin" },
-        ],
         videos: [],
       },
       {
