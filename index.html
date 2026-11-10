@@ -348,6 +348,20 @@
      ================================================================ */
     const APPS = [
       {
+        name: "CMC", featured: true, hue: "#064CB2",
+        kind: { de: "B2B-Marktplatz · Baumaterial · AR/EN", en: "B2B marketplace · Construction · AR/EN" },
+        desc: {
+          de: "Marktplatz für Baumaterial, Gerätemiete und Fachleistungen. Produkte nach Sorte, Gebinde und Marke konfigurieren, den Warenkorb als eine Preisanfrage senden, Angebote mehrerer Lieferanten vergleichen und als PDF exportieren, Fachleistungen über servergesteuerte Formulare anfragen und Aufträge mit Status-Verlauf und Ratenrechnungen verfolgen – Clean Architecture mit 13 Feature-Modulen. (Video: deutsche Untertitel, App-Oberfläche Englisch.)",
+          en: "A marketplace for building materials, equipment rental and specialized work. Configure products by grade, pack and brand, send the whole cart as one quote request, compare competing supplier quotes and export them as a PDF, request services through server-driven forms and track orders with a status timeline and deferred-payment invoices — Clean Architecture across 13 feature modules."
+        },
+        tags: ["Flutter", "BLoC / Cubit", "Clean Architecture", "GetIt + Injectable", "Dio", "Server-driven forms", "PDF export", "RTL / i18n (AR · EN)", "FCM Push", "Google Maps"],
+        videos: [
+          { label: "Deutsch 16:9", src: "videos/cmc-showcase-de-16x9.mp4", poster: "posters/cmc-de.jpg", lang: "de" },
+          { label: "English 16:9", src: "videos/cmc-showcase-en-16x9.mp4", poster: "posters/cmc-en.jpg", lang: "en" },
+          { label: "Vertical 9:16", src: "videos/cmc-showcase-en-9x16.mp4", poster: "posters/cmc-vertical.jpg", vertical: true },
+        ],
+      },
+      {
         name: "Shamikh", featured: true, hue: "#6B4423",
         kind: { de: "Marktplatz · Reitsport · AR/EN/DE", en: "Marketplace · Equestrian · AR/EN/DE" },
         desc: {
@@ -392,6 +406,16 @@
           { label: "English 16:9", src: "videos/outfit-ai-showcase-en-16x9.mp4", poster: "posters/outfit-ai-en.jpg", lang: "en" },
           { label: "Vertical 9:16", src: "videos/outfit-ai-showcase-en-9x16.mp4", poster: "posters/outfit-ai-vertical.jpg", vertical: true },
         ],
+      },
+      {
+        name: "CMC", hue: "#064CB2",
+        kind: { de: "B2B-Marktplatz · Baumaterial", en: "B2B marketplace · Construction" },
+        desc: {
+          de: "Bau-Marktplatz für Unternehmen: Materialkatalog, Preisanfragen an mehrere Lieferanten mit Angebotsvergleich und PDF-Export, Gerätemiete, Fachleistungen über servergesteuerte Formulare sowie Aufträge mit Zahlung auf Ziel.",
+          en: "Construction marketplace for businesses: materials catalogue, quote requests to multiple suppliers with quote comparison and PDF export, equipment rental, specialized work via server-driven forms, and orders with deferred payment."
+        },
+        tags: ["Clean Architecture", "Quote comparison", "Server-driven forms", "PDF"],
+        videos: [],
       },
       {
         name: "Rakeez", hue: "#0F7B6C",
