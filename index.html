@@ -3,16 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Youssef Ramadan · Senior Flutter Engineer</title>
-  <meta name="description" content="Youssef Ramadan – Senior Flutter Engineer in Dortmund. 4+ Jahre Erfahrung, 15+ veröffentlichte Apps, Clean Architecture, BLoC, Fintech. Sofort verfügbar." />
+  <title>Youssef Ramadan · Flutter Developer · Dortmund</title>
+  <meta name="description" content="Youssef Ramadan – Flutter Developer, Software Developer und AI-Driven Developer in Dortmund. 4+ Jahre Erfahrung, 15+ veröffentlichte Apps, Clean Architecture, BLoC, Fintech. Sofort verfügbar." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Youssef Ramadan · Senior Flutter Engineer" />
+  <meta property="og:title" content="Youssef Ramadan · Flutter Developer · AI-Driven Developer" />
   <meta property="og:description" content="4+ Jahre Flutter, 15+ Apps in App Store, Google Play & AppGallery. Dortmund · Deutsch B2 · sofort verfügbar." />
-  <meta property="og:image" content="posters/outfit-ai-en.jpg" />
+  <meta property="og:image" content="https://youssefabdelmonem.github.io/posters/outfit-ai-de.jpg" />
+  <meta property="og:url" content="https://youssefabdelmonem.github.io/" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://youssefabdelmonem.github.io/" />
+  <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#6C4CE0" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%236C4CE0'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle'>YR</text></svg>" />
   <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Youssef Ramadan",
+    "jobTitle": "Flutter Developer",
+    "url": "https://youssefabdelmonem.github.io/",
+    "image": "https://youssefabdelmonem.github.io/assets/youssef.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dortmund", "addressCountry": "DE" },
+    "knowsLanguage": ["de", "en", "ar"],
+    "knowsAbout": ["Flutter", "Dart", "Clean Architecture", "BLoC", "Mobile App Development", "CI/CD"],
+    "sameAs": ["https://github.com/YoussefAbdelmonem", "https://www.linkedin.com/in/youssefabdelmonem/"]
+  }
+  </script>
   <style>
     /* Fonts are self-hosted on purpose: no requests to Google (GDPR / DSGVO). */
     @font-face { font-family: "Inter"; src: url("fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
@@ -41,8 +61,11 @@
     html, body { margin: 0; background: var(--bg); color: var(--text); }
     body { font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; }
     a { color: var(--accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+    .skip { position: absolute; left: 12px; top: -60px; z-index: 30; padding: 10px 14px; border-radius: 8px; background: var(--text); color: var(--bg); font-weight: 600; text-decoration: none; }
+    .skip:focus { top: 12px; }
     img, video { max-width: 100%; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .wrap { max-width: 1120px; margin-inline: auto; padding-inline: 20px; }  /* inline only: `padding: 0 20px` wiped out the vertical padding of every <section class="wrap"> */
     .display { font-family: "Space Grotesk", Inter, sans-serif; letter-spacing: -.02em; }
 
     /* Nav */
@@ -71,7 +94,7 @@
     .status { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--ok-soft); color: var(--ok); font-size: 13.5px; font-weight: 600; }
     .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 25%, transparent); }
     h1 { font: 700 clamp(40px, 6.4vw, 68px)/1.02 "Space Grotesk", sans-serif; letter-spacing: -.035em; margin: 18px 0 8px; }
-    .role { font: 600 clamp(19px, 2.4vw, 24px)/1.3 "Space Grotesk", sans-serif; color: var(--accent); margin: 0 0 18px; }
+    .role { font: 600 clamp(17px, 2.1vw, 22px)/1.3 "Space Grotesk", sans-serif; color: var(--accent); margin: 0 0 18px; }
     .lede { color: var(--muted); max-width: 640px; font-size: 17.5px; margin: 0 0 18px; }
     .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 26px; padding: 0; list-style: none; color: var(--muted); font-size: 14.5px; }
     .meta li { display: inline-flex; align-items: center; gap: 6px; }
@@ -90,7 +113,7 @@
     @media (max-width: 760px) { .facts { grid-template-columns: 1fr 1fr; } .fact:nth-child(3) { border-left: 0; } .fact:nth-child(n+3) { border-top: 1px solid var(--line); } }
 
     /* Sections */
-    section { padding: 56px 0; }
+    section { padding-block: 44px; }
     .sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 28px; }
     .eyebrow { font: 600 12.5px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
     h2 { font: 700 clamp(28px, 3.6vw, 38px)/1.15 "Space Grotesk", sans-serif; letter-spacing: -.025em; margin: 0; }
@@ -157,10 +180,9 @@
     .panel h4 { font: 700 18px/1.25 "Space Grotesk", sans-serif; margin: 0 0 4px; }
     .panel p { margin: 0; color: var(--muted); }
     .langs { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
-    .langs li { display: grid; grid-template-columns: 110px 1fr auto; align-items: center; gap: 12px; font-weight: 600; }
-    .bar { height: 6px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
-    .bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
-    .langs em { font-style: normal; color: var(--muted); font-size: 14px; font-weight: 500; }
+    .langs li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-weight: 600; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .langs li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .langs em { font-style: normal; color: var(--muted); font-size: 14.5px; font-weight: 500; text-align: right; }
 
     /* Contact */
     .cta { background: var(--text); color: var(--bg); border-radius: 26px; padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
@@ -173,8 +195,18 @@
 
     footer { padding: 32px 0 48px; color: var(--muted); font-size: 13.5px; }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
-    footer details { max-width: 640px; }
+    footer .legal { display: grid; gap: 8px; max-width: 680px; }
     footer summary { cursor: pointer; font-weight: 600; }
+    footer details p { margin: 8px 0 0; }
+
+    @media print {
+      .nav, .lang, .media, .tabs, .skip { display: none !important; }
+      body { background: #fff; color: #000; font-size: 12px; }
+      section { padding: 18px 0; }
+      .card, .job, .pillar, .skill, .panel, .facts { box-shadow: none; break-inside: avoid; }
+      .cta { background: none; color: #000; border: 1px solid #ccc; }
+      .cta h2, .cta p, .cta .btn { color: #000; }
+    }
 
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
   </style>
@@ -193,6 +225,8 @@
     <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></symbol>
   </svg>
+
+  <a class="skip" href="#top" data-i18n="skip">Zum Inhalt springen</a>
 
   <nav class="nav" aria-label="Hauptnavigation">
     <div class="wrap">
@@ -215,17 +249,17 @@
       <div>
         <span class="status" data-i18n="hero.status">Sofort verfügbar · offen für Festanstellung</span>
         <h1>Youssef Ramadan</h1>
-        <p class="role" data-i18n="hero.role">Senior Flutter Engineer · AI-First Development</p>
-        <p class="lede" data-i18n="hero.lede">Ich entwickle skalierbare, wartbare Mobile Apps mit Flutter – von komplexen Multi-Step-Flows und Echtzeit-Features bis zu sicheren, regulierten Fintech-Produkten. Mit Clean Architecture, Tests und CI/CD vom technischen Konzept bis zum Store-Release.</p>
+        <p class="role" data-i18n="hero.role">Flutter Developer · Software Developer · AI-Driven Developer</p>
+        <p class="lede" data-i18n="hero.lede">Von der Idee bis in den App Store: In vier Jahren habe ich mehr als 15 Apps veröffentlicht – Marktplätze, Liefer-Plattformen und eine regulierte Fintech-App. Sauber gebaut mit Clean Architecture, abgesichert durch Tests und CI/CD, und spürbar schneller dank KI-gestützter Entwicklung, bei der jede Änderung geprüft wird, bevor sie live geht.</p>
         <ul class="meta">
-          <li><svg><use href="#i-pin"/></svg><span data-i18n="hero.loc">Dortmund, Deutschland</span></li>
-          <li><svg><use href="#i-lang"/></svg><span data-i18n="hero.langs">Deutsch B2 · Englisch sehr gut · Arabisch Muttersprache</span></li>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="hero.loc">Dortmund, Deutschland</span></li>
+          <li><svg aria-hidden="true"><use href="#i-lang"/></svg><span data-i18n="hero.langs">Deutsch B2 · Englisch sehr gut · Arabisch Muttersprache</span></li>
         </ul>
         <div class="actions">
-          <a class="btn primary" href="mailto:youssefabdelmonem2000@gmail.com"><svg><use href="#i-mail"/></svg><span data-i18n="cta.mail">Kontakt aufnehmen</span></a>
-          <a class="btn" href="assets/Youssef_Ramadan_CV.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg><span data-i18n="cta.cv">Lebenslauf (PDF)</span></a>
-          <a class="btn" href="https://github.com/YoussefAbdelmonem" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-gh"/></svg>GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/youssefabdelmonem/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg>LinkedIn</a>
+          <a class="btn primary" href="mailto:youssefabdelmonem2000@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-i18n="cta.mail">Kontakt aufnehmen</span></a>
+          <a class="btn" data-cv href="assets/Youssef_Ramadan_Lebenslauf_DE.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-doc"/></svg><span data-i18n="cta.cv">Lebenslauf (PDF)</span></a>
+          <a class="btn" href="https://github.com/YoussefAbdelmonem" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/youssefabdelmonem/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-in"/></svg>LinkedIn</a>
         </div>
       </div>
       <div class="portrait"><img src="assets/youssef.jpg" alt="Porträt von Youssef Ramadan" width="600" height="600" /></div>
@@ -236,7 +270,7 @@
         <div class="fact"><b>4+</b><span data-i18n="facts.years">Jahre Berufserfahrung</span></div>
         <div class="fact"><b>15+</b><span data-i18n="facts.apps">veröffentlichte Apps</span></div>
         <div class="fact"><b>3</b><span data-i18n="facts.stores">App Stores: Apple, Google, Huawei</span></div>
-        <div class="fact"><b>B2</b><span data-i18n="facts.german">Deutsch – im Alltag und im Team</span></div>
+        <div class="fact"><b>B2</b><span data-i18n="facts.german">Deutsch (GER-Niveau)</span></div>
       </div>
     </div>
 
@@ -247,6 +281,7 @@
       </div>
       <div id="featured"></div>
       <div class="grid" id="apps"></div>
+      <noscript><p>Die Projektliste benötigt JavaScript. Alle Projekte finden Sie auch im <a href="assets/Youssef_Ramadan_Lebenslauf_DE.pdf">Lebenslauf (PDF)</a>.</p></noscript>
     </section>
 
     <section class="wrap">
@@ -254,10 +289,10 @@
         <div><p class="eyebrow" data-i18n="approach.eyebrow">Arbeitsweise</p><h2 data-i18n="approach.title">Wie ich arbeite</h2></div>
       </div>
       <div class="approach">
-        <div class="pillar"><div class="ico"><svg><use href="#i-layers"/></svg></div><h4 data-i18n="ap1.t">Saubere Architektur</h4><p data-i18n="ap1.d">Clean Architecture, BLoC/Cubit und feature-basierte Module. Ich definiere Architektur- und Coding-Standards, damit komplexe Multi-Role-Apps wartbar und testbar bleiben.</p></div>
-        <div class="pillar"><div class="ico"><svg><use href="#i-check"/></svg></div><h4 data-i18n="ap2.t">Qualität & Tests</h4><p data-i18n="ap2.d">Unit-, Widget- und Golden-Tests, statische Analyse und Code Reviews über Pull Requests. Dazu Dokumentation, mit der neue Entwickler schnell produktiv werden.</p></div>
-        <div class="pillar"><div class="ico"><svg><use href="#i-rocket"/></svg></div><h4 data-i18n="ap3.t">Release & Monitoring</h4><p data-i18n="ap3.d">CI/CD mit GitHub Actions, Fastlane und Codemagic. Nach jedem Release überwache ich App-Health mit Crashlytics, Sentry und Flutter DevTools.</p></div>
-        <div class="pillar"><div class="ico"><svg><use href="#i-spark"/></svg></div><h4 data-i18n="ap4.t">KI-gestützt – aber geprüft</h4><p data-i18n="ap4.d">Täglich Claude Code mit Projektanweisungen und Figma MCP für schnelles Design-to-Code. Jede Änderung wird reviewed, analysiert und getestet, bevor sie live geht.</p></div>
+        <div class="pillar"><div class="ico"><svg aria-hidden="true"><use href="#i-layers"/></svg></div><h4 data-i18n="ap1.t">Saubere Architektur</h4><p data-i18n="ap1.d">Clean Architecture, BLoC/Cubit und feature-basierte Module. Ich definiere Architektur- und Coding-Standards, damit komplexe Multi-Role-Apps wartbar und testbar bleiben.</p></div>
+        <div class="pillar"><div class="ico"><svg aria-hidden="true"><use href="#i-check"/></svg></div><h4 data-i18n="ap2.t">Qualität & Tests</h4><p data-i18n="ap2.d">Unit-, Widget- und Golden-Tests, statische Analyse und Code Reviews über Pull Requests. Dazu Dokumentation, mit der neue Entwickler schnell produktiv werden.</p></div>
+        <div class="pillar"><div class="ico"><svg aria-hidden="true"><use href="#i-rocket"/></svg></div><h4 data-i18n="ap3.t">Release & Monitoring</h4><p data-i18n="ap3.d">CI/CD mit GitHub Actions, Fastlane und Codemagic. Nach jedem Release überwache ich App-Health mit Crashlytics, Sentry und Flutter DevTools.</p></div>
+        <div class="pillar"><div class="ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></div><h4 data-i18n="ap4.t">KI-gestützt – aber geprüft</h4><p data-i18n="ap4.d">Täglich Claude Code mit Projektanweisungen und Figma MCP für schnelles Design-to-Code. Jede Änderung wird reviewed, analysiert und getestet, bevor sie live geht.</p></div>
       </div>
     </section>
 
@@ -303,9 +338,9 @@
         <div class="panel">
           <p class="eyebrow" data-i18n="langs.eyebrow">Sprachen</p>
           <ul class="langs">
-            <li><span data-i18n="langs.de">Deutsch</span><span class="bar"><i style="width:68%"></i></span><em>B2</em></li>
-            <li><span data-i18n="langs.en">Englisch</span><span class="bar"><i style="width:85%"></i></span><em data-i18n="langs.enlvl">sehr gut</em></li>
-            <li><span data-i18n="langs.ar">Arabisch</span><span class="bar"><i style="width:100%"></i></span><em data-i18n="langs.arlvl">Muttersprache</em></li>
+            <li><span data-i18n="langs.de">Deutsch</span><em data-i18n="langs.delvl">B2 (GER)</em></li>
+            <li><span data-i18n="langs.en">Englisch</span><em data-i18n="langs.enlvl">sehr gut</em></li>
+            <li><span data-i18n="langs.ar">Arabisch</span><em data-i18n="langs.arlvl">Muttersprache</em></li>
           </ul>
         </div>
       </div>
@@ -314,13 +349,13 @@
     <section id="contact" class="wrap">
       <div class="cta">
         <div>
-          <h2 data-i18n="contact.title">Lassen Sie uns sprechen.</h2>
+          <h2 data-i18n="contact.title">Lassen Sie uns ins Gespräch kommen.</h2>
           <p data-i18n="contact.text">Ich bin ab sofort verfügbar und freue mich über Gespräche zu Flutter-Positionen in Deutschland – vor Ort in NRW, hybrid oder remote.</p>
         </div>
         <div class="actions">
-          <a class="btn primary" href="mailto:youssefabdelmonem2000@gmail.com"><svg><use href="#i-mail"/></svg>youssefabdelmonem2000@gmail.com</a>
-          <a class="btn" href="assets/Youssef_Ramadan_CV.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg><span data-i18n="cta.cv">Lebenslauf (PDF)</span></a>
-          <a class="btn" href="https://www.linkedin.com/in/youssefabdelmonem/" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>LinkedIn</a>
+          <a class="btn primary" href="mailto:youssefabdelmonem2000@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>youssefabdelmonem2000@gmail.com</a>
+          <a class="btn" data-cv href="assets/Youssef_Ramadan_Lebenslauf_DE.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-doc"/></svg><span data-i18n="cta.cv">Lebenslauf (PDF)</span></a>
+          <a class="btn" href="https://www.linkedin.com/in/youssefabdelmonem/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-in"/></svg>LinkedIn</a>
         </div>
       </div>
     </section>
@@ -329,10 +364,19 @@
   <footer>
     <div class="wrap">
       <span>© <span id="year"></span> Youssef Ramadan</span>
-      <details>
-        <summary data-i18n="privacy.t">Datenschutz</summary>
-        <p data-i18n="privacy.d">Diese Website setzt keine Cookies, nutzt kein Tracking und lädt keine Inhalte von Drittanbietern; Schriften und Videos werden lokal ausgeliefert. Gehostet wird die Seite bei GitHub Pages (GitHub Inc.), das beim Aufruf technisch notwendige Daten wie die IP-Adresse in Server-Logs verarbeitet.</p>
-      </details>
+      <div class="legal">
+        <details>
+          <summary data-i18n="imprint.t">Kontakt &amp; Verantwortlicher</summary>
+          <p><span data-i18n="imprint.d">Verantwortlich für den Inhalt dieser Website:</span> Youssef Ramadan, Dortmund · <a href="mailto:youssefabdelmonem2000@gmail.com">youssefabdelmonem2000@gmail.com</a></p>
+          <p data-i18n="imprint.d2">Private Bewerbungs-Website ohne kommerzielles Angebot.</p>
+        </details>
+        <details>
+          <summary data-i18n="privacy.t">Datenschutz</summary>
+          <p data-i18n="privacy.d">Diese Website setzt keine Cookies, nutzt kein Tracking und lädt keine Inhalte von Drittanbietern; Schriften und Videos werden lokal ausgeliefert. Lediglich Ihre Sprachwahl (DE/EN) wird lokal in Ihrem Browser gespeichert und nicht übertragen.</p>
+          <p data-i18n="privacy.d2">Gehostet wird die Seite bei GitHub Pages (GitHub, Inc., USA). Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie die IP-Adresse in Server-Logs, um die Seite sicher auszuliefern (Art. 6 Abs. 1 lit. f DSGVO).</p>
+          <p data-i18n="privacy.d3">Wenn Sie mich per E-Mail kontaktieren, verwende ich Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage. Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten sowie auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.</p>
+        </details>
+      </div>
     </div>
   </footer>
 
@@ -347,6 +391,24 @@
      Apps without videos show a placeholder with the project name.
      ================================================================ */
     const APPS = [
+      {
+        name: "Schooly", featured: true, hue: "#2F62CE",
+        kind: { de: "E-Commerce · Schuluniformen · AR/EN", en: "E-commerce · School uniforms · AR/EN" },
+        desc: {
+          de: "Eltern wählen Schule und Klasse, finden die passende Uniform-Größe (mit Größentabelle und Paketen), zahlen per Paymob oder bar und verfolgen die Bestellung mit Status-Verlauf. Die Online-Zahlung gilt erst als bezahlt, wenn der Server sie bestätigt – aufgeteilt in 14 Feature-Module. (Video: deutsche Untertitel, App-Oberfläche Englisch.)",
+          en: "Parents pick the school and grade, find the right uniform size (with size chart and packages), pay with Paymob or cash on delivery and track the order on a status timeline. Online payments count as paid only once the server confirms them — split into 14 feature modules."
+        },
+        tags: ["Flutter", "BLoC / Cubit", "Dio", "GetIt", "Paymob (WebView)", "Server-verified payments", "RTL / i18n (AR · EN)", "FCM Push"],
+        links: [
+          { label: "App Store", href: "https://apps.apple.com/us/app/schooly-%D8%B3%D9%83%D9%88%D9%84%D9%8A/id6781253849" },
+          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.schooly" },
+        ],
+        videos: [
+          { label: "Deutsch 16:9", src: "videos/schooly-showcase-de-16x9.mp4", poster: "posters/schooly-de.jpg", lang: "de" },
+          { label: "English 16:9", src: "videos/schooly-showcase-en-16x9.mp4", poster: "posters/schooly-en.jpg", lang: "en" },
+          { label: "Vertical 9:16", src: "videos/schooly-showcase-en-9x16.mp4", poster: "posters/schooly-vertical.jpg", vertical: true },
+        ],
+      },
       {
         name: "CMC", featured: true, hue: "#064CB2",
         kind: { de: "B2B-Marktplatz · Baumaterial · AR/EN", en: "B2B marketplace · Construction · AR/EN" },
@@ -369,6 +431,8 @@
           en: "An equestrian marketplace: shops, clinics, stables and events in one app. Server-driven home, products with add-on services, wallet checkout with shipment tracking, chat with stores, QR event tickets with a payment-deadline countdown and a digital file for every horse — in Arabic (RTL), English and German."
         },
         tags: ["Flutter", "BLoC / Cubit", "GetIt", "Dio", "Server-driven UI", "RTL / i18n (AR · EN · DE)", "Pagination", "FCM Push", "Google Maps", "Unit tests"],
+        status: { de: "Launch in Kürze", en: "Launching soon" },
+        links: [{ label: "TestFlight", href: "https://testflight.apple.com/join/nhDSk7fU" }],
         videos: [
           { label: "Deutsch 16:9", src: "videos/shamikh-showcase-de-16x9.mp4", poster: "posters/shamikh-de.jpg", lang: "de" },
           { label: "English 16:9", src: "videos/shamikh-showcase-en-16x9.mp4", poster: "posters/shamikh-en.jpg", lang: "en" },
@@ -408,16 +472,6 @@
         ],
       },
       {
-        name: "CMC", hue: "#064CB2",
-        kind: { de: "B2B-Marktplatz · Baumaterial", en: "B2B marketplace · Construction" },
-        desc: {
-          de: "Bau-Marktplatz für Unternehmen: Materialkatalog, Preisanfragen an mehrere Lieferanten mit Angebotsvergleich und PDF-Export, Gerätemiete, Fachleistungen über servergesteuerte Formulare sowie Aufträge mit Zahlung auf Ziel.",
-          en: "Construction marketplace for businesses: materials catalogue, quote requests to multiple suppliers with quote comparison and PDF export, equipment rental, specialized work via server-driven forms, and orders with deferred payment."
-        },
-        tags: ["Clean Architecture", "Quote comparison", "Server-driven forms", "PDF"],
-        videos: [],
-      },
-      {
         name: "Rakeez", hue: "#0F7B6C",
         kind: { de: "Fintech · reguliertes Umfeld", en: "Fintech · regulated environment" },
         desc: {
@@ -446,32 +500,6 @@
           { label: { de: "App Store · Fahrer", en: "App Store · Driver" }, href: "https://apps.apple.com/us/app/tamm-order-driver/id6749005272" },
           { label: { de: "Google Play · Anbieter", en: "Google Play · Provider" }, href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderprovider" },
           { label: { de: "Google Play · Fahrer", en: "Google Play · Driver" }, href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderdriver" },
-        ],
-        videos: [],
-      },
-      {
-        name: "Shamikh", hue: "#8A5A2B",
-        kind: { de: "Super-App · Pferdesport", en: "Super app · Equestrian" },
-        desc: {
-          de: "All-in-one-Plattform rund ums Pferd: Apotheken, Tierkliniken, Shops, Reitakademien und Ställe. Modulare Architektur, in der jede Kategorie eigene Such-, Buchungs- und Bestellregeln hat – vereint unter einem gemeinsamen State-Management.",
-          en: "All-in-one platform for the horse-care ecosystem: pharmacies, vet clinics, stores, riding academies and stables. Modular architecture where each category runs its own discovery, booking and ordering rules under a shared state layer."
-        },
-        tags: ["Modular Architecture", "Booking", "Ordering"],
-        status: { de: "Launch in Kürze", en: "Launching soon" },
-        links: [{ label: "TestFlight", href: "https://testflight.apple.com/join/nhDSk7fU" }],
-        videos: [],
-      },
-      {
-        name: "Schooly", hue: "#D9A21B",
-        kind: { de: "E-Commerce · Schulbedarf", en: "E-commerce · School supplies" },
-        desc: {
-          de: "Shop-App, die Schulen und ihren Schulbedarf zusammenbringt: Eltern stöbern nach Schule und kaufen Uniformen und Material. Katalog, Filter, Warenkorb und Checkout mit zweisprachiger UI (Arabisch/Englisch, RTL).",
-          en: "Commerce app that brings schools and their required supplies together: parents browse by school and buy uniforms and essentials. Catalog, filtering, cart and checkout with a bilingual (Arabic/English, RTL) UI."
-        },
-        tags: ["Checkout", "Payments", "RTL / i18n"],
-        links: [
-          { label: "App Store", href: "https://apps.apple.com/us/app/schooly-%D8%B3%D9%83%D9%88%D9%84%D9%8A/id6781253849" },
-          { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.schooly" },
         ],
         videos: [],
       },
@@ -533,12 +561,12 @@
       en: {
         "nav.projects": "Projects", "nav.experience": "Experience", "nav.skills": "Skills", "nav.contact": "Contact",
         "hero.status": "Available immediately · open to full-time roles",
-        "hero.role": "Senior Flutter Engineer · AI-First Development",
-        "hero.lede": "I build scalable, maintainable mobile apps with Flutter – from complex multi-step flows and real-time features to secure, regulated fintech products. With Clean Architecture, tests and CI/CD, from technical design to store release.",
+        "hero.role": "Flutter Developer · Software Developer · AI-Driven Developer",
+        "hero.lede": "From idea to the App Store: in four years I have shipped more than 15 apps – marketplaces, delivery platforms and a regulated fintech app. Built cleanly with Clean Architecture, backed by tests and CI/CD, and noticeably faster thanks to AI-driven development where every change is reviewed before it goes live.",
         "hero.loc": "Dortmund, Germany",
         "hero.langs": "German B2 · English advanced · Arabic native",
         "cta.mail": "Get in touch", "cta.cv": "Résumé (PDF)",
-        "facts.years": "years of professional experience", "facts.apps": "apps shipped", "facts.stores": "app stores: Apple, Google, Huawei", "facts.german": "German – at work and in the team",
+        "facts.years": "years of professional experience", "facts.apps": "apps shipped", "facts.stores": "app stores: Apple, Google, Huawei", "facts.german": "German (CEFR level)",
         "projects.eyebrow": "Projects", "projects.title": "Apps I've built",
         "projects.sub": "Production apps on the App Store, Google Play and AppGallery. Short showcase videos walk through the key flows.",
         "approach.eyebrow": "Approach", "approach.title": "How I work",
@@ -560,11 +588,15 @@
         ],
         "skills.eyebrow": "Skills", "skills.title": "Technologies & tools",
         "edu.eyebrow": "Education", "edu.degree": "B.Sc. in Bioinformatics", "edu.school": "Faculty of Computers & Information Sciences, Mansoura University, Egypt",
-        "langs.eyebrow": "Languages", "langs.de": "German", "langs.en": "English", "langs.enlvl": "advanced", "langs.ar": "Arabic", "langs.arlvl": "native",
+        "langs.eyebrow": "Languages", "langs.de": "German", "langs.delvl": "B2 (CEFR)", "langs.en": "English", "langs.enlvl": "advanced", "langs.ar": "Arabic", "langs.arlvl": "native",
         "contact.title": "Let's talk.",
         "contact.text": "I'm available immediately and happy to talk about Flutter roles in Germany – on-site in NRW, hybrid or remote.",
         "privacy.t": "Privacy",
-        "privacy.d": "This website sets no cookies, uses no tracking and loads no third-party content; fonts and videos are served locally. It is hosted on GitHub Pages (GitHub Inc.), which processes technically necessary data such as IP addresses in server logs.",
+        "privacy.d": "This website sets no cookies, uses no tracking and loads no third-party content; fonts and videos are served locally. Only your language choice (DE/EN) is stored locally in your browser and is never transmitted.",
+        "privacy.d2": "The site is hosted on GitHub Pages (GitHub, Inc., USA). When you open it, GitHub processes technically necessary data such as your IP address in server logs to deliver the site securely (Art. 6(1)(f) GDPR).",
+        "privacy.d3": "If you contact me by e-mail, I use your details only to handle your enquiry. You have the right to access, rectification and erasure of your data and to lodge a complaint with a data protection authority.",
+        "imprint.t": "Contact & responsible person", "imprint.d": "Responsible for the content of this website:", "imprint.d2": "Private job-application website with no commercial offering.",
+        "skip": "Skip to content",
         "video.label": "Video version",
       },
     };
@@ -586,7 +618,8 @@
       }
       wrap.className = "media";
       const video = document.createElement("video");
-      video.controls = true; video.playsInline = true; video.preload = "metadata";
+      video.controls = true; video.playsInline = true; video.preload = "none";
+      video.setAttribute("aria-label", `${app.name} – Showcase-Video`);
       wrap.append(video);
       const tabs = document.createElement("div");
       tabs.className = "tabs"; tabs.setAttribute("role", "group"); tabs.setAttribute("aria-label", I18N[lang]["video.label"]);
@@ -612,7 +645,8 @@
       const { el: media, tabs } = mediaFor(app);
       const body = document.createElement("div");
       body.className = "body";
-      const links = (app.links || []).map(l => `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(pick(l.label))} ↗</a>`).join("");
+      const ext = lang === "de" ? "öffnet in neuem Tab" : "opens in a new tab";
+      const links = (app.links || []).map(l => `<a href="${esc(l.href)}" target="_blank" rel="noopener" title="${ext}">${esc(pick(l.label))} <span aria-hidden="true">↗</span></a>`).join("");
       body.innerHTML = `
         <p class="kind">${esc(pick(app.kind))}</p>
         <h3>${esc(app.name)}</h3>
@@ -645,6 +679,8 @@
         const v = I18N[lang][el.dataset.i18n]; if (typeof v === "string") el.textContent = v;
       });
       document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+      // German visitors get the German Lebenslauf, English visitors the English CV.
+      document.querySelectorAll("a[data-cv]").forEach(a => { a.href = lang === "de" ? "assets/Youssef_Ramadan_Lebenslauf_DE.pdf" : "assets/Youssef_Ramadan_CV.pdf"; });
       document.querySelector(".portrait img").alt = lang === "de" ? "Porträt von Youssef Ramadan" : "Portrait of Youssef Ramadan";
       render();
       try { localStorage.setItem("lang", lang); } catch (e) {}
