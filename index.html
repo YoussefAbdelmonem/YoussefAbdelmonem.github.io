@@ -392,6 +392,27 @@
      ================================================================ */
     const APPS = [
       {
+        name: "Tamm Order", featured: true, hue: "#F47628",
+        kind: { de: "Liefer-Plattform · 3 Apps · Teamprojekt", en: "Delivery platform · 3 apps · team project" },
+        desc: {
+          de: "Drei verbundene Flutter-Apps (Kunde, Anbieter, Fahrer) für eine Bestellung von Anfang bis Ende: Der Kunde wählt Größe und Extras und bestellt, das Restaurant nimmt an und bereitet zu, ein Fahrer holt ab – und der Kunde verfolgt ihn live auf der Karte. Im Team gebaut: Die Kunden-App stammt komplett von mir, dazu die Live-Standort-Pipeline des Fahrers (Positions-Stream → Socket.IO → Karte) – 117 von 297 Commits. (Video: deutsche Untertitel, App-Oberfläche Englisch, Demodaten.)",
+          en: "Three connected Flutter apps (client, provider, driver) taking one order end to end: the client picks a size and extras and orders, the restaurant accepts and prepares, a driver picks it up — and the client follows the driver live on the map. Built in a team: the Client app is entirely mine, plus the driver's live-location pipeline (position stream → Socket.IO → map) — 117 of 297 commits. (Video: demo data.)"
+        },
+        tags: ["Flutter", "BLoC / Cubit", "GetIt", "Dio", "Socket.IO live tracking", "Google Maps · Geolocator", "RTL / i18n (AR · EN)", "FCM Push"],
+        links: [
+          { label: { de: "App Store · Kunde", en: "App Store · Client" }, href: "https://apps.apple.com/us/app/tamm-order/id6748983606" },
+          { label: { de: "App Store · Anbieter", en: "App Store · Provider" }, href: "https://apps.apple.com/us/app/tamm-order-provider/id6749199838" },
+          { label: { de: "App Store · Fahrer", en: "App Store · Driver" }, href: "https://apps.apple.com/us/app/tamm-order-driver/id6749005272" },
+          { label: { de: "Google Play · Anbieter", en: "Google Play · Provider" }, href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderprovider" },
+          { label: { de: "Google Play · Fahrer", en: "Google Play · Driver" }, href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderdriver" },
+        ],
+        videos: [
+          { label: "Deutsch 16:9", src: "videos/tamm-order-showcase-de-16x9.mp4", poster: "posters/tamm-order-de.jpg", lang: "de" },
+          { label: "English 16:9", src: "videos/tamm-order-showcase-en-16x9.mp4", poster: "posters/tamm-order-en.jpg", lang: "en" },
+          { label: "Vertical 9:16", src: "videos/tamm-order-showcase-en-9x16.mp4", poster: "posters/tamm-order-vertical.jpg", vertical: true },
+        ],
+      },
+      {
         name: "Logister", featured: true, hue: "#0E9F9A",
         kind: { de: "Logistik-Plattform · 3 Apps · Teamprojekt", en: "Logistics platform · 3 apps · team project" },
         desc: {
@@ -497,23 +518,6 @@
           { label: "App Store", href: "https://apps.apple.com/us/app/rakeez-%D8%B1%D9%83%D9%8A%D8%B2/id1666327789" },
           { label: "Google Play", href: "https://play.google.com/store/apps/details?id=sa.rakeez.app" },
           { label: "AppGallery", href: "https://appgallery.huawei.com/#/app/C110159905" },
-        ],
-        videos: [],
-      },
-      {
-        name: "Tamm Order", hue: "#E0662E",
-        kind: { de: "Liefer-Plattform · 3 Apps", en: "Delivery platform · 3 apps" },
-        desc: {
-          de: "Skalierbares Liefer-Ökosystem im Stil von Lieferando mit drei verbundenen Apps (Kunde, Anbieter, Fahrer): kompletter Bestell-Lebenszyklus, Live-Standortverfolgung und rollenbasierte Kommunikation zwischen allen Beteiligten.",
-          en: "Scalable Lieferando-style delivery ecosystem with three connected apps (customer, vendor, driver): full order lifecycle, real-time location tracking and role-based communication between all parties."
-        },
-        tags: ["Real-time", "Google Maps", "Multi-Role", "FCM"],
-        links: [
-          { label: { de: "App Store · Kunde", en: "App Store · Client" }, href: "https://apps.apple.com/us/app/tamm-order/id6748983606" },
-          { label: { de: "App Store · Anbieter", en: "App Store · Provider" }, href: "https://apps.apple.com/us/app/tamm-order-provider/id6749199838" },
-          { label: { de: "App Store · Fahrer", en: "App Store · Driver" }, href: "https://apps.apple.com/us/app/tamm-order-driver/id6749005272" },
-          { label: { de: "Google Play · Anbieter", en: "Google Play · Provider" }, href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderprovider" },
-          { label: { de: "Google Play · Fahrer", en: "Google Play · Driver" }, href: "https://play.google.com/store/apps/details?id=com.alalmiyaalhura.tammorderdriver" },
         ],
         videos: [],
       },
