@@ -392,6 +392,20 @@
      ================================================================ */
     const APPS = [
       {
+        name: "Logister", featured: true, hue: "#0E9F9A",
+        kind: { de: "Logistik-Plattform · 3 Apps · Teamprojekt", en: "Logistics platform · 3 apps · team project" },
+        desc: {
+          de: "Drei verbundene Flutter-Apps (Versender, Spediteur, Fahrer) für eine Sendung von Anfang bis Ende: Der Versender stellt die Ladung ein, Spediteure bieten und verhandeln, der Spediteur teilt Fahrer und Lkw zu, und der Versender verfolgt den Fahrer live auf der Karte bis zur Zustellung mit Fotonachweis. Im Team gebaut: Die Versender-App stammt komplett von mir, in den anderen beiden Apps die Live-Standort-Pipeline (Socket-Emit → Relay → Live-Karte), Fahrer- und Lkw-Zuweisung, Flottenverwaltung und Zustellnachweis – 144 von 283 Commits. (Video: deutsche Untertitel, App-Oberfläche Englisch, Demodaten.)",
+          en: "Three connected Flutter apps (shipper, carrier, driver) handling one shipment end to end: the shipper posts a load, carriers bid and negotiate, the carrier assigns a driver and truck, and the shipper follows the driver live on the map until delivery with photo proof. Built in a team: the Shipper app is entirely mine; in the other two I built the live-location pipeline (socket emit → relay → live map), driver & truck assignment, fleet management and proof of delivery — 144 of 283 commits. (Video: demo data.)"
+        },
+        tags: ["Flutter", "BLoC / Cubit", "GetIt", "Dio", "Socket.IO live tracking", "Google Maps · Geolocator", "RTL / i18n (AR · EN)", "FCM Push"],
+        videos: [
+          { label: "Deutsch 16:9", src: "videos/logister-showcase-de-16x9.mp4", poster: "posters/logister-de.jpg", lang: "de" },
+          { label: "English 16:9", src: "videos/logister-showcase-en-16x9.mp4", poster: "posters/logister-en.jpg", lang: "en" },
+          { label: "Vertical 9:16", src: "videos/logister-showcase-en-9x16.mp4", poster: "posters/logister-vertical.jpg", vertical: true },
+        ],
+      },
+      {
         name: "Schooly", featured: true, hue: "#2F62CE",
         kind: { de: "E-Commerce · Schuluniformen · AR/EN", en: "E-commerce · School uniforms · AR/EN" },
         desc: {
