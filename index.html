@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Youssef Ramadan · Flutter Developer · Dortmund</title>
-  <meta name="description" content="Youssef Ramadan – Flutter Developer, Software Developer und AI-Driven Developer in Dortmund. 4+ Jahre Erfahrung, 15+ veröffentlichte Apps, Clean Architecture, BLoC, Fintech. Aufenthaltstitel mit Arbeitserlaubnis, sofort verfügbar." />
+  <title>Youssef Ramadan · Flutter Developer · Mülheim</title>
+  <meta name="description" content="Youssef Ramadan – Flutter Developer, Software Developer und AI-Driven Developer in Mülheim. 4+ Jahre Erfahrung, 15+ veröffentlichte Apps, Clean Architecture, BLoC, Fintech. Aufenthaltstitel mit Arbeitserlaubnis, sofort verfügbar." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Youssef Ramadan · Flutter Developer · AI-Driven Developer" />
-  <meta property="og:description" content="4+ Jahre Flutter, 15+ Apps in App Store, Google Play & AppGallery. Dortmund · Deutsch B2 · Arbeitserlaubnis vorhanden · sofort verfügbar." />
+  <meta property="og:description" content="4+ Jahre Flutter, 15+ Apps in App Store, Google Play & AppGallery. Mülheim · Deutsch B2 · Arbeitserlaubnis vorhanden · sofort verfügbar." />
   <meta property="og:image" content="https://youssefabdelmonem.github.io/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -33,7 +33,7 @@
     "jobTitle": "Flutter Developer",
     "url": "https://youssefabdelmonem.github.io/",
     "image": "https://youssefabdelmonem.github.io/assets/youssef.jpg",
-    "address": { "@type": "PostalAddress", "addressLocality": "Dortmund", "addressCountry": "DE" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Mülheim", "addressCountry": "DE" },
     "knowsLanguage": ["de", "en", "ar"],
     "knowsAbout": ["Flutter", "Dart", "Clean Architecture", "BLoC", "Mobile App Development", "CI/CD"],
     "sameAs": ["https://github.com/YoussefAbdelmonem", "https://www.linkedin.com/in/youssefabdelmonem/"]
@@ -164,6 +164,17 @@
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
     @media (max-width: 400px) { .grid { grid-template-columns: 1fr; } }
 
+    /* CI/CD case study — numbers from the real GitHub Actions run history */
+    .runstats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 2px 0; }
+    .runstat { background: var(--surface-2); border-radius: 12px; padding: 10px 12px; }
+    .runstat b { display: block; font: 700 20px/1.15 "Space Grotesk", sans-serif; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+    .runstat b.ok { color: var(--ok); }
+    .runstat span { color: var(--muted); font-size: 12.5px; line-height: 1.35; display: block; }
+    .lessons { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .lessons li { position: relative; padding-left: 24px; color: var(--muted); font-size: 14.5px; line-height: 1.45; }
+    .lessons li::before { content: ""; position: absolute; left: 2px; top: .38em; width: 12px; height: 12px; border-radius: 50%; background: var(--ok-soft); border: 2px solid var(--ok); }
+    .lessons b { color: var(--text); font-weight: 600; }
+
     /* Approach */
     .approach { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
     .pillar { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
@@ -251,6 +262,7 @@
       <a class="logo" href="#top"><i>YR</i>Youssef Ramadan</a>
       <ul>
         <li><a href="#projects" data-i18n="nav.projects">Projekte</a></li>
+        <li><a href="#cicd">CI/CD</a></li>
         <li><a href="#experience" data-i18n="nav.experience">Erfahrung</a></li>
         <li><a href="#skills" data-i18n="nav.skills">Kenntnisse</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
@@ -270,7 +282,7 @@
         <p class="role" data-i18n="hero.role">Flutter Developer · Software Developer · AI-Driven Developer</p>
         <p class="lede" data-i18n="hero.lede">Von der Idee bis in den App Store: In vier Jahren habe ich mehr als 15 Apps veröffentlicht – Marktplätze, Liefer-Plattformen und eine regulierte Fintech-App. Sauber gebaut mit Clean Architecture, abgesichert durch Tests und CI/CD, und spürbar schneller dank KI-gestützter Entwicklung, bei der jede Änderung geprüft wird, bevor sie live geht.</p>
         <ul class="meta">
-          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="hero.loc">Dortmund, Deutschland</span></li>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="hero.loc">Mülheim, Deutschland</span></li>
           <li><svg aria-hidden="true"><use href="#i-lang"/></svg><span data-i18n="hero.langs">Deutsch B2 · Englisch sehr gut · Arabisch Muttersprache</span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.permit">Aufenthaltstitel mit Arbeitserlaubnis – keine Visa-Sponsorship nötig</span></li>
         </ul>
@@ -301,6 +313,30 @@
       <div id="featured"></div>
       <div class="grid" id="apps"></div>
       <noscript><p>Die Projektliste benötigt JavaScript. Alle Projekte finden Sie auch im <a href="assets/Youssef_Ramadan_Lebenslauf_DE.pdf">Lebenslauf (PDF)</a>.</p></noscript>
+    </section>
+
+    <section id="cicd" class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow" data-i18n="cicd.eyebrow">Release-Pipeline · CI/CD</p><h2 data-i18n="cicd.title">Ein Klick bis in TestFlight und Google Play</h2></div>
+        <p data-i18n="cicd.sub">Ich habe den Release-Workflow für All-In Trade aufgesetzt – von der Architektur bis zum ersten grünen Run.</p>
+      </div>
+      <article class="card featured">
+        <div id="cicd-media" class="media"></div>
+        <div class="body">
+          <p class="kind" data-i18n="cicd.kind">Fallstudie · GitHub Actions · Video auf Englisch</p>
+          <h3 data-i18n="cicd.h">6 rote Runs. Dann zwei grüne.</h3>
+          <p class="desc" data-i18n="cicd.desc">Ein manuell ausgelöster Workflow baut, signiert und veröffentlicht die Flutter-App: iOS per xcodebuild-Archiv und Cloud Signing direkt in TestFlight, Android als signiertes App Bundle in den Produktions-Track von Google Play. Kein Mac, keine manuellen Uploads – und jeder Fehlschlag wurde zu einem Guard-Step im Workflow.</p>
+          <div class="runstats">
+            <div class="runstat"><b class="ok">9m 34s</b><span data-i18n="cicd.s1">iOS → TestFlight · Run #6</span></div>
+            <div class="runstat"><b class="ok">33m 29s</b><span data-i18n="cicd.s2">Android → Google Play · Run #9</span></div>
+            <div class="runstat"><b>2</b><span data-i18n="cicd.s3">parallele Jobs: macOS + Ubuntu</span></div>
+            <div class="runstat"><b>4</b><span data-i18n="cicd.s4">Secrets – mehr braucht die CI nicht</span></div>
+          </div>
+          <ul class="lessons" data-i18n-list="cicd.lessons"></ul>
+          <div id="cicd-tabs"></div>
+          <ul class="chips"><li>GitHub Actions</li><li>workflow_dispatch</li><li>xcodebuild</li><li>App Store Connect API</li><li>Cloud Signing</li><li>Google Play Developer API</li><li>Gradle</li><li>GitHub CLI</li></ul>
+        </div>
+      </article>
     </section>
 
     <section class="wrap">
@@ -387,7 +423,7 @@
       <div class="legal">
         <details>
           <summary data-i18n="imprint.t">Kontakt &amp; Verantwortlicher</summary>
-          <p><span data-i18n="imprint.d">Verantwortlich für den Inhalt dieser Website:</span> Youssef Ramadan, Dortmund · <a href="mailto:youssefabdelmonem2000@gmail.com">youssefabdelmonem2000@gmail.com</a></p>
+          <p><span data-i18n="imprint.d">Verantwortlich für den Inhalt dieser Website:</span> Youssef Ramadan, Mülheim · <a href="mailto:youssefabdelmonem2000@gmail.com">youssefabdelmonem2000@gmail.com</a></p>
           <p data-i18n="imprint.d2">Private Bewerbungs-Website ohne kommerzielles Angebot.</p>
         </details>
         <details>
@@ -596,13 +632,19 @@
           "App-Features umgesetzt und REST-APIs sowie Drittanbieter-Services integriert, um Funktionsumfang und Nutzererlebnis zu verbessern.",
         ],
         "video.label": "Video-Version",
+        "cicd.lessons": [
+          "Den ersten Fehler lesen, nicht den lautesten: Hinter „No profiles“ steckte ein widerrufener API-Key (401) – jetzt prüft ein Guard-Step den Key vor dem Build.",
+          "Re-run ≠ neuer Run: Ein Re-run nutzt die alte Workflow-Datei. Fix pushen, dann neu starten.",
+          "Nur ein Admin-API-Key darf Cloud Signing – mit App-Manager-Rechten scheitert der Export.",
+          "Leeres Log, volle Platte: Der Android-Runner lief voll. Ein erster Schritt gibt jetzt ~25 GB frei.",
+        ],
       },
       en: {
         "nav.projects": "Projects", "nav.experience": "Experience", "nav.skills": "Skills", "nav.contact": "Contact",
         "hero.status": "Available immediately · open to full-time roles",
         "hero.role": "Flutter Developer · Software Developer · AI-Driven Developer",
         "hero.lede": "From idea to the App Store: in four years I have shipped more than 15 apps – marketplaces, delivery platforms and a regulated fintech app. Built cleanly with Clean Architecture, backed by tests and CI/CD, and noticeably faster thanks to AI-driven development where every change is reviewed before it goes live.",
-        "hero.loc": "Dortmund, Germany",
+        "hero.loc": "Mülheim, Germany",
         "hero.langs": "German B2 · English advanced · Arabic native",
         "hero.permit": "German residence permit with work authorization – no visa sponsorship needed",
         "cta.mail": "Get in touch", "cta.cv": "Résumé (PDF)", "cta.copy": "Copy e-mail",
@@ -639,6 +681,17 @@
         "imprint.t": "Contact & responsible person", "imprint.d": "Responsible for the content of this website:", "imprint.d2": "Private job-application website with no commercial offering.",
         "skip": "Skip to content",
         "video.label": "Video version",
+        "cicd.eyebrow": "Release pipeline · CI/CD", "cicd.title": "One click to TestFlight and Google Play",
+        "cicd.sub": "I set up the release workflow for All-In Trade – from the architecture to the first green run.",
+        "cicd.kind": "Case study · GitHub Actions", "cicd.h": "6 failed runs. Then two green ones.",
+        "cicd.desc": "A manually triggered workflow builds, signs and ships the Flutter app: iOS through an xcodebuild archive and cloud signing straight to TestFlight, Android as a signed App Bundle to the Google Play production track. No Mac, no hand uploads – and every failure became a guard step in the workflow.",
+        "cicd.s1": "iOS → TestFlight · run #6", "cicd.s2": "Android → Google Play · run #9", "cicd.s3": "parallel jobs: macOS + Ubuntu", "cicd.s4": "secrets – that's all CI needs",
+        "cicd.lessons": [
+          "Read the first error, not the loudest: behind “No profiles” was a revoked API key (401) – a guard step now tests the key before building.",
+          "Re-run ≠ new run: a re-run replays the old workflow file. Push the fix, then start a new run.",
+          "Only an Admin API key can use cloud signing – with App Manager rights the export fails.",
+          "Empty log, full disk: the Android runner ran out of space. A first step now frees ~25 GB.",
+        ],
       },
     };
 
@@ -722,8 +775,21 @@
     document.getElementById("featured").append(...CARDS.filter((c, i) => APPS[i].featured).map(c => c.el));
     document.getElementById("apps").append(...CARDS.filter((c, i) => !APPS[i].featured).map(c => c.el));
 
+    // CI/CD case study: same player as the project cards (one video at a time, play stats).
+    const CICD = mediaFor({
+      name: "CI/CD release pipeline",
+      videos: [
+        // 4:5 first: it fills the tall featured-card column; 16:9 is one tap away.
+        { label: "4:5", src: "videos/flutter-cicd-en-4x5.mp4", poster: "posters/flutter-cicd-4x5.jpg", vertical: true },
+        { label: "16:9", src: "videos/flutter-cicd-en-16x9.mp4", poster: "posters/flutter-cicd-en.jpg" },
+      ],
+    });
+    document.getElementById("cicd-media").replaceWith(CICD.el);
+    if (CICD.tabs) document.getElementById("cicd-tabs").replaceWith(CICD.tabs);
+
     function render() {
       CARDS.forEach(c => c.update());
+      CICD.update();
       document.getElementById("skill-list").replaceChildren(...SKILLS.map(s => {
         const d = document.createElement("div"); d.className = "skill";
         d.innerHTML = `<h4>${esc(pick(s.t))}</h4><ul class="chips">${s.items.map(i => `<li>${esc(i)}</li>`).join("")}</ul>`;
